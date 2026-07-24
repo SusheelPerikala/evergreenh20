@@ -25,8 +25,8 @@ export function Header() {
         {navItems.map(([label, href]) => <Link key={label} href={href}>{label}</Link>)}
       </nav>
       <div className="header-actions">
-        <Link className="header-login" href="/products#guide">Get product guidance</Link>
-        <Link className="button button-small" href="/products">Shop <Icon name="arrow" /></Link>
+        <Link className="header-link" href="/products#guide">Get product guidance</Link>
+        <Link className="button button-small header-cta" href="/products">Shop <Icon name="arrow" /></Link>
         <details className="mobile-menu" ref={menuRef}>
           <summary aria-label="Navigation menu"><Icon name="menu" /></summary>
           <nav aria-label="Mobile navigation">
