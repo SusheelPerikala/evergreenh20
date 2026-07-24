@@ -1,0 +1,612 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wayfinder | Autonomous AI Freight Orchestration</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    :root {
+      --ink: #171916;
+      --paper: #F3F1EA;
+      --white: #FCFCF8;
+      --fog: #D9D7CE;
+      --muted: #6E716A;
+      --signal: #C8F45D;
+      --signal-dark: #2B3B16;
+      --sky: #C9E5F0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--paper);
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .display-text {
+      font-size: clamp(2.6rem, 8vw, 6.5rem);
+      line-height: 0.94;
+      letter-spacing: -0.05em;
+      font-weight: 400;
+    }
+
+    .statement-text {
+      font-size: clamp(1.8rem, 4.5vw, 4.2rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+    .btn-primary {
+      background-color: var(--signal);
+      color: var(--signal-dark);
+      transition: all 250ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(200, 244, 93, 0.3);
+    }
+    
+    .glass-nav {
+      backdrop-filter: blur(12px);
+      background-color: rgba(23, 25, 22, 0.95);
+    }
+
+    .orchestration-grid {
+      background-image: radial-gradient(var(--fog) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    @keyframes pulse-signal {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
+    }
+    .status-dot {
+      animation: pulse-signal 2s infinite;
+    }
+
+    @keyframes drift {
+      from { transform: translateX(0); }
+      to { transform: translateX(20px); }
+    }
+    .drift-element {
+      animation: drift 4s infinite alternate ease-in-out;
+    }
+
+    .perspective-card {
+      perspective: 1000px;
+    }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen" data-sd-id="1">
+    <!-- Navigation -->
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[92%] max-w-5xl z-50" data-sd-id="2">
+      <div class="glass-nav rounded-full px-6 py-3 flex items-center justify-between border border-white/10" data-sd-id="3">
+        <div class="flex items-center gap-2" data-sd-id="4">
+          <div class="w-8 h-8 bg-[#C8F45D] rounded-lg flex items-center justify-center" data-sd-id="5">
+            <iconify-icon icon="lucide:route" class="text-[#171916] text-xl"></iconify-icon>
+          </div>
+          <span class="text-white font-bold tracking-tighter text-xl" data-sd-id="6">WAYFINDER</span>
+        </div>
+        
+        <div class="hidden md:flex items-center gap-8" data-sd-id="7">
+          <a href="#product" id="nav-product" class="text-sm font-medium text-white/70 hover:text-white transition-colors" data-sd-id="8">Product</a>
+          <a href="#capability" id="nav-capability" class="text-sm font-medium text-white/70 hover:text-white transition-colors" data-sd-id="9">Solutions</a>
+          <a href="#customers" id="nav-customers" class="text-sm font-medium text-white/70 hover:text-white transition-colors" data-sd-id="10">Customers</a>
+          <a href="#news" id="nav-news" class="text-sm font-medium text-white/70 hover:text-white transition-colors" data-sd-id="11">News</a>
+        </div>
+
+        <div class="flex items-center gap-3" data-sd-id="12">
+          <a href="#demo" id="nav-cta" class="bg-[#C8F45D] text-[#2B3B16] px-5 py-2 rounded-full text-sm font-bold flex items-center gap-2 hover:opacity-90 transition-opacity" data-sd-id="13">
+            Book Demo <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+          </a>
+          <button class="md:hidden text-white p-1" data-sd-id="14">
+            <iconify-icon icon="lucide:menu" class="text-2xl"></iconify-icon>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 px-6 md:px-12 lg:px-28 min-h-[92svh] flex flex-col items-center justify-center text-center overflow-hidden relative" data-sd-id="15">
+      <div class="absolute top-0 left-0 w-full h-full bg-[#C9E5F0]/30 -z-10" data-sd-id="16"></div>
+      
+      <div class="max-w-6xl mx-auto space-y-8" data-sd-id="17">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#D9D7CE] text-[11px] font-bold uppercase tracking-[0.14em]" data-sd-id="18">
+          <span class="status-dot w-2 h-2 rounded-full bg-[#C8F45D]" data-sd-id="19"></span>
+          System Active: 4,102 Loads Managed Today
+        </div>
+        
+        <h1 class="display-text" data-sd-id="20">
+          Logistics operations<br>
+          on autopilot.
+        </h1>
+        
+        <p class="text-lg md:text-xl text-[#6E716A] max-w-2xl mx-auto" data-sd-id="21">
+          Wayfinder is an autonomous AI coordinator that captures, schedules, and tracks every shipment for modern manufacturers.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4" data-sd-id="22">
+          <a href="#demo" id="hero-primary" class="btn-primary px-8 py-4 rounded-full font-bold flex items-center gap-2" data-sd-id="23">
+            Start Your Transformation <iconify-icon icon="lucide:arrow-right-circle"></iconify-icon>
+          </a>
+          <a href="#" id="hero-secondary" class="bg-white border border-[#D9D7CE] px-8 py-4 rounded-full font-bold hover:bg-gray-50 transition-colors" data-sd-id="24">
+            Watch Product Film
+          </a>
+        </div>
+      </div>
+
+      <!-- Live Orchestration Visual -->
+      <div class="mt-20 w-full max-w-7xl mx-auto orchestration-grid border border-[#D9D7CE] rounded-[32px] bg-white aspect-video md:aspect-[21/9] p-8 relative overflow-hidden" data-sd-id="25">
+        <div class="absolute inset-0 flex items-center justify-center opacity-10" data-sd-id="26">
+          <iconify-icon icon="lucide:network" class="text-[400px]"></iconify-icon>
+        </div>
+        
+        <div class="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-6 h-full" data-sd-id="27">
+          <!-- Source Column -->
+          <div class="space-y-4" data-sd-id="28">
+            <div class="p-4 bg-[#F3F1EA] rounded-2xl border border-[#D9D7CE] drift-element" data-sd-id="29">
+              <div class="flex justify-between items-start mb-4" data-sd-id="30">
+                <span class="text-[10px] font-bold text-[#6E716A] tracking-wider" data-sd-id="31">TMS INGEST</span>
+                <span class="text-[10px] font-bold text-green-600" data-sd-id="32">LIVE</span>
+              </div>
+              <div class="h-2 w-full bg-[#D9D7CE] rounded-full mb-2 overflow-hidden" data-sd-id="33">
+                <div class="h-full bg-[#C8F45D] w-3/4" data-sd-id="34"></div>
+              </div>
+              <div class="text-sm font-medium" data-sd-id="35">Chicago Plant → Dallas DC</div>
+            </div>
+            <div class="p-4 bg-white rounded-2xl border border-[#D9D7CE] opacity-50" data-sd-id="36">
+              <div class="h-2 w-1/2 bg-[#D9D7CE] rounded-full mb-2" data-sd-id="37"></div>
+              <div class="text-xs text-[#6E716A]" data-sd-id="38">Awaiting schedule data...</div>
+            </div>
+          </div>
+
+          <!-- AI Middle Layer -->
+          <div class="md:col-span-2 flex flex-col items-center justify-center relative" data-sd-id="39">
+            <div class="w-48 h-48 rounded-full border-4 border-dashed border-[#C8F45D] flex items-center justify-center animate-spin [animation-duration:15s]" data-sd-id="40">
+            </div>
+            <div class="absolute flex flex-col items-center gap-2" data-sd-id="41">
+              <iconify-icon icon="lucide:cpu" class="text-4xl text-[#171916]"></iconify-icon>
+              <span class="text-xs font-bold tracking-[0.2em] bg-[#171916] text-white px-2 py-1 rounded" data-sd-id="42">WAYFINDER CORE</span>
+            </div>
+            <!-- Connecting lines simulation -->
+            <svg class="absolute inset-0 w-full h-full -z-10 pointer-events-none" data-sd-id="43">
+              <path d="M 100 150 Q 300 150 500 200" stroke="#D9D7CE" fill="transparent" stroke-dasharray="4 4"></path>
+              <path d="M 100 250 Q 300 250 500 200" stroke="#D9D7CE" fill="transparent" stroke-dasharray="4 4"></path>
+            </svg>
+          </div>
+
+          <!-- Output Column -->
+          <div class="space-y-4 flex flex-col justify-end" data-sd-id="44">
+            <div class="p-4 bg-[#171916] text-white rounded-2xl" data-sd-id="45">
+              <div class="flex gap-2 items-center mb-2" data-sd-id="46">
+                <iconify-icon icon="lucide:check-circle" class="text-[#C8F45D]"></iconify-icon>
+                <span class="text-[10px] font-bold tracking-widest" data-sd-id="47">DISPATCHED</span>
+              </div>
+              <div class="text-xs text-white/70" data-sd-id="48">Load #8921 Optimized</div>
+              <div class="mt-2 text-sm" data-sd-id="49">Cost savings: $412.00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial Statement -->
+    <section class="py-32 px-6 md:px-12 lg:px-28 bg-[#171916] text-[#FCFCF8]" data-sd-id="50">
+      <div class="max-w-4xl" data-sd-id="51">
+        <p class="statement-text" data-sd-id="52">
+          The era of manual coordination is over. Wayfinder turns your supply chain from a series of phone calls into a self-optimizing organism that learns from every mile.
+        </p>
+      </div>
+    </section>
+
+    <!-- Capability Story: Capture -->
+    <section id="capability" class="py-32 px-6 md:px-12 lg:px-28" data-sd-id="53">
+      <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20" data-sd-id="54">
+        <div class="lg:w-5/12 space-y-8" data-sd-id="55">
+          <div class="text-[12px] font-bold uppercase tracking-[0.14em] text-[#6E716A]" data-sd-id="56">Phase 01</div>
+          <h2 class="text-4xl md:text-5xl font-medium tracking-tight" data-sd-id="57">Capture intent at the source.</h2>
+          <p class="text-lg text-[#6E716A]" data-sd-id="58">Wayfinder connects directly to your ERP, TMS, and email threads to ingest every load requirement automatically.</p>
+          
+          <ul class="space-y-4" data-sd-id="59">
+            <li class="flex items-start gap-3" data-sd-id="60">
+              <iconify-icon icon="lucide:zap" class="mt-1 text-[#2B3B16]"></iconify-icon>
+              <span data-sd-id="61">Real-time EDI &amp; API synchronization</span>
+            </li>
+            <li class="flex items-start gap-3" data-sd-id="62">
+              <iconify-icon icon="lucide:mail" class="mt-1 text-[#2B3B16]"></iconify-icon>
+              <span data-sd-id="63">Natural language processing for email tenders</span>
+            </li>
+            <li class="flex items-start gap-3" data-sd-id="64">
+              <iconify-icon icon="lucide:layers" class="mt-1 text-[#2B3B16]"></iconify-icon>
+              <span data-sd-id="65">Consolidation of fragmented shipping requests</span>
+            </li>
+          </ul>
+
+          <a href="#" id="link-capture" class="inline-flex items-center gap-2 font-bold group" data-sd-id="66">
+            Explore Data Ingest <iconify-icon icon="lucide:arrow-right" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+          </a>
+        </div>
+        
+        <div class="lg:w-7/12 w-full" data-sd-id="67">
+          <div class="bg-white rounded-[28px] border border-[#D9D7CE] shadow-sm p-6 aspect-video flex flex-col gap-4 overflow-hidden" data-sd-id="68">
+             <div class="flex items-center justify-between pb-4 border-b border-[#F3F1EA]" data-sd-id="69">
+                <div class="flex gap-2" data-sd-id="70">
+                  <div class="w-3 h-3 rounded-full bg-[#D9D7CE]" data-sd-id="71"></div>
+                  <div class="w-3 h-3 rounded-full bg-[#D9D7CE]" data-sd-id="72"></div>
+                  <div class="w-3 h-3 rounded-full bg-[#D9D7CE]" data-sd-id="73"></div>
+                </div>
+                <div class="text-[10px] font-bold text-[#6E716A]" data-sd-id="74">WAYFINDER // INGEST_MONITOR</div>
+             </div>
+             <div class="flex-1 flex gap-4" data-sd-id="75">
+                <div class="w-1/3 space-y-3" data-sd-id="76">
+                   <div class="h-20 bg-[#F3F1EA] rounded-xl border-2 border-dashed border-[#D9D7CE] flex items-center justify-center" data-sd-id="77">
+                      <iconify-icon icon="lucide:plus" class="text-xl text-[#6E716A]"></iconify-icon>
+                   </div>
+                   <div class="p-3 bg-white border border-[#D9D7CE] rounded-xl text-[10px]" data-sd-id="78">
+                      <div class="font-bold mb-1" data-sd-id="79">EMAIL_TENDER_882</div>
+                      <div class="text-[#6E716A]" data-sd-id="80">Processing attached PDF...</div>
+                   </div>
+                </div>
+                <div class="flex-1 bg-[#F3F1EA] rounded-xl p-4" data-sd-id="81">
+                   <div class="flex justify-between items-center mb-6" data-sd-id="82">
+                      <div class="text-xs font-bold" data-sd-id="83">RECOGNIZED ENTITIES</div>
+                      <div class="px-2 py-1 rounded-md bg-[#C8F45D] text-[9px] font-bold uppercase" data-sd-id="84">99.4% Accuracy</div>
+                   </div>
+                   <div class="space-y-4" data-sd-id="85">
+                      <div class="flex justify-between border-b border-[#D9D7CE] pb-2" data-sd-id="86">
+                        <span class="text-[10px] text-[#6E716A]" data-sd-id="87">Origin</span>
+                        <span class="text-[10px] font-bold" data-sd-id="88">Cleveland, OH (Plant 4)</span>
+                      </div>
+                      <div class="flex justify-between border-b border-[#D9D7CE] pb-2" data-sd-id="89">
+                        <span class="text-[10px] text-[#6E716A]" data-sd-id="90">Destination</span>
+                        <span class="text-[10px] font-bold" data-sd-id="91">Los Angeles, CA (Port)</span>
+                      </div>
+                      <div class="flex justify-between border-b border-[#D9D7CE] pb-2" data-sd-id="92">
+                        <span class="text-[10px] text-[#6E716A]" data-sd-id="93">Equipment</span>
+                        <span class="text-[10px] font-bold" data-sd-id="94">Dry Van 53'</span>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capability Story: Coordinate (Reversed) -->
+    <section class="py-32 px-6 md:px-12 lg:px-28 bg-[#FCFCF8]" data-sd-id="95">
+      <div class="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-20" data-sd-id="96">
+        <div class="lg:w-5/12 space-y-8" data-sd-id="97">
+          <div class="text-[12px] font-bold uppercase tracking-[0.14em] text-[#6E716A]" data-sd-id="98">Phase 02</div>
+          <h2 class="text-4xl md:text-5xl font-medium tracking-tight" data-sd-id="99">Orchestrate with precision.</h2>
+          <p class="text-lg text-[#6E716A]" data-sd-id="100">No more manual booking. Wayfinder matches loads to the optimal carrier based on cost, reliability, and lane performance.</p>
+          
+          <ul class="space-y-4" data-sd-id="101">
+            <li class="flex items-start gap-3" data-sd-id="102">
+              <iconify-icon icon="lucide:trending-down" class="mt-1 text-[#2B3B16]"></iconify-icon>
+              <span data-sd-id="103">Dynamic rate benchmarking &amp; negotiation</span>
+            </li>
+            <li class="flex items-start gap-3" data-sd-id="104">
+              <iconify-icon icon="lucide:shield-check" class="mt-1 text-[#2B3B16]"></iconify-icon>
+              <span data-sd-id="105">Automated carrier compliance verification</span>
+            </li>
+            <li class="flex items-start gap-3" data-sd-id="106">
+              <iconify-icon icon="lucide:calendar" class="mt-1 text-[#2B3B16]"></iconify-icon>
+              <span data-sd-id="107">Multi-stop route optimization engine</span>
+            </li>
+          </ul>
+
+          <a href="#" id="link-coordinate" class="inline-flex items-center gap-2 font-bold group" data-sd-id="108">
+            View Match Logic <iconify-icon icon="lucide:arrow-right" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+          </a>
+        </div>
+        
+        <div class="lg:w-7/12 w-full" data-sd-id="109">
+          <div class="bg-[#171916] rounded-[28px] shadow-2xl p-6 aspect-video flex flex-col gap-6 relative overflow-hidden" data-sd-id="110">
+             <div class="flex items-center justify-between" data-sd-id="111">
+                <span class="text-white font-bold text-sm tracking-tight" data-sd-id="112">OPTIMIZATION_MATRIX</span>
+                <div class="flex gap-2" data-sd-id="113">
+                   <span class="bg-white/10 text-white/60 text-[10px] px-2 py-1 rounded" data-sd-id="114">Iteration 412</span>
+                   <span class="bg-[#C8F45D] text-[#171916] text-[10px] px-2 py-1 rounded font-bold" data-sd-id="115">Optimal Found</span>
+                </div>
+             </div>
+             
+             <div class="flex-1 grid grid-cols-3 gap-3" data-sd-id="116">
+                <!-- Carrier Card 1 -->
+                <div class="bg-white/5 border border-white/10 rounded-xl p-4" data-sd-id="117">
+                   <div class="text-white/40 text-[9px] uppercase mb-1" data-sd-id="118">Carrier A</div>
+                   <div class="text-white text-xs font-bold" data-sd-id="119">Titan Logistics</div>
+                   <div class="mt-4 h-1 w-full bg-white/10 rounded-full" data-sd-id="120">
+                      <div class="h-full bg-red-400 w-1/3" data-sd-id="121"></div>
+                   </div>
+                   <div class="mt-2 text-white/50 text-[10px]" data-sd-id="122">$2.14 / mile</div>
+                </div>
+                <!-- Carrier Card 2 -->
+                <div class="bg-[#C8F45D] rounded-xl p-4 scale-105 z-10 shadow-xl" data-sd-id="123">
+                   <div class="text-[#2B3B16]/60 text-[9px] uppercase mb-1" data-sd-id="124">Carrier B</div>
+                   <div class="text-[#2B3B16] text-xs font-bold" data-sd-id="125">SwiftLink Inc.</div>
+                   <div class="mt-4 h-1 w-full bg-[#2B3B16]/10 rounded-full" data-sd-id="126">
+                      <div class="h-full bg-[#2B3B16] w-full" data-sd-id="127"></div>
+                   </div>
+                   <div class="mt-2 text-[#2B3B16]/70 text-[10px]" data-sd-id="128">$1.82 / mile</div>
+                </div>
+                <!-- Carrier Card 3 -->
+                <div class="bg-white/5 border border-white/10 rounded-xl p-4" data-sd-id="129">
+                   <div class="text-white/40 text-[9px] uppercase mb-1" data-sd-id="130">Carrier C</div>
+                   <div class="text-white text-xs font-bold" data-sd-id="131">Atlas Freight</div>
+                   <div class="mt-4 h-1 w-full bg-white/10 rounded-full" data-sd-id="132">
+                      <div class="h-full bg-yellow-400 w-2/3" data-sd-id="133"></div>
+                   </div>
+                   <div class="mt-2 text-white/50 text-[10px]" data-sd-id="134">$1.95 / mile</div>
+                </div>
+             </div>
+
+             <div class="absolute -bottom-4 left-6 right-6 h-20 bg-gradient-to-t from-[#171916] to-transparent pointer-events-none" data-sd-id="135"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capability Story: Resolve -->
+    <section class="py-32 px-6 md:px-12 lg:px-28" data-sd-id="136">
+      <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20" data-sd-id="137">
+        <div class="lg:w-5/12 space-y-8" data-sd-id="138">
+          <div class="text-[12px] font-bold uppercase tracking-[0.14em] text-[#6E716A]" data-sd-id="139">Phase 03</div>
+          <h2 class="text-4xl md:text-5xl font-medium tracking-tight" data-sd-id="140">Resolve before they call.</h2>
+          <p class="text-lg text-[#6E716A]" data-sd-id="141">Wayfinder predicts delays and autonomously reroutes or updates receivers, keeping your customers informed 24/7.</p>
+          
+          <ul class="space-y-4" data-sd-id="142">
+            <li class="flex items-start gap-3" data-sd-id="143">
+              <iconify-icon icon="lucide:alert-triangle" class="mt-1 text-[#2B3B16]"></iconify-icon>
+              <span data-sd-id="144">Predictive weather &amp; traffic impact analysis</span>
+            </li>
+            <li class="flex items-start gap-3" data-sd-id="145">
+              <iconify-icon icon="lucide:message-square" class="mt-1 text-[#2B3B16]"></iconify-icon>
+              <span data-sd-id="146">Automated appointment rescheduling</span>
+            </li>
+            <li class="flex items-start gap-3" data-sd-id="147">
+              <iconify-icon icon="lucide:eye" class="mt-1 text-[#2B3B16]"></iconify-icon>
+              <span data-sd-id="148">Continuous GPS &amp; ELD signal monitoring</span>
+            </li>
+          </ul>
+
+          <a href="#" id="link-resolve" class="inline-flex items-center gap-2 font-bold group" data-sd-id="149">
+            Exception Management <iconify-icon icon="lucide:arrow-right" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+          </a>
+        </div>
+        
+        <div class="lg:w-7/12 w-full" data-sd-id="150">
+          <div class="bg-white rounded-[28px] border border-[#D9D7CE] shadow-sm p-6 aspect-video flex flex-col gap-4 overflow-hidden" data-sd-id="151">
+             <div class="flex justify-between items-center mb-2" data-sd-id="152">
+                <div class="flex items-center gap-2" data-sd-id="153">
+                   <div class="w-4 h-4 rounded-full bg-red-100 flex items-center justify-center" data-sd-id="154">
+                      <div class="w-1.5 h-1.5 rounded-full bg-red-500" data-sd-id="155"></div>
+                   </div>
+                   <span class="text-[10px] font-bold" data-sd-id="156">EXCEPTION DETECTED: LOAD #441</span>
+                </div>
+                <span class="text-[10px] text-[#6E716A]" data-sd-id="157">12:04 PM</span>
+             </div>
+             
+             <div class="flex gap-4 h-full" data-sd-id="158">
+                <div class="flex-1 bg-red-50/50 border border-red-100 rounded-xl p-4" data-sd-id="159">
+                   <div class="text-[10px] font-bold text-red-700 mb-2 uppercase" data-sd-id="160">The Event</div>
+                   <div class="text-xs mb-4" data-sd-id="161">Severe weather on I-80 causing 4-hour delay. Estimated arrival at DC pushed to 10:30 PM.</div>
+                   <div class="flex items-center gap-2" data-sd-id="162">
+                      <div class="w-8 h-8 rounded-full bg-white border border-[#D9D7CE]" data-sd-id="163"></div>
+                      <div class="h-2 w-20 bg-[#D9D7CE] rounded-full" data-sd-id="164"></div>
+                   </div>
+                </div>
+                <div class="w-px bg-[#D9D7CE]" data-sd-id="165"></div>
+                <div class="flex-1 space-y-3" data-sd-id="166">
+                   <div class="text-[10px] font-bold text-[#6E716A] uppercase" data-sd-id="167">Autonomous Response</div>
+                   <div class="flex gap-2 items-center" data-sd-id="168">
+                      <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                      <span class="text-[10px]" data-sd-id="169">Receiver notified of late arrival</span>
+                   </div>
+                   <div class="flex gap-2 items-center" data-sd-id="170">
+                      <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                      <span class="text-[10px]" data-sd-id="171">Dock door appointment shifted to 06:00 AM</span>
+                   </div>
+                   <div class="flex gap-2 items-center" data-sd-id="172">
+                      <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                      <span class="text-[10px]" data-sd-id="173">Supply chain visibility portal updated</span>
+                   </div>
+                </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Band / Human-in-the-Loop -->
+    <section class="py-20 px-6 border-y border-[#D9D7CE] bg-[#F3F1EA]" data-sd-id="174">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12" data-sd-id="175">
+        <div class="max-w-md" data-sd-id="176">
+          <h3 class="text-2xl font-medium mb-4" data-sd-id="177">You keep the control. We do the work.</h3>
+          <p class="text-[#6E716A]" data-sd-id="178">Wayfinder operates under your supervision. Flag exceptions that require human judgment and let the AI handle the rest.</p>
+        </div>
+        <div class="flex items-center gap-12" data-sd-id="179">
+          <div class="text-center" data-sd-id="180">
+             <div class="text-4xl font-bold mb-1" data-sd-id="181">98%</div>
+             <div class="text-[10px] font-bold uppercase tracking-widest text-[#6E716A]" data-sd-id="182">Autonomy Rate</div>
+          </div>
+          <div class="text-center" data-sd-id="183">
+             <div class="text-4xl font-bold mb-1" data-sd-id="184">0.5s</div>
+             <div class="text-[10px] font-bold uppercase tracking-widest text-[#6E716A]" data-sd-id="185">Response Time</div>
+          </div>
+          <div class="text-center" data-sd-id="186">
+             <div class="text-4xl font-bold mb-1" data-sd-id="187">24/7</div>
+             <div class="text-[10px] font-bold uppercase tracking-widest text-[#6E716A]" data-sd-id="188">Active Monitoring</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Logo Strip -->
+    <section id="customers" class="py-16 px-6" data-sd-id="189">
+      <div class="max-w-7xl mx-auto" data-sd-id="190">
+         <div class="text-center mb-12" data-sd-id="191">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-[#6E716A]" data-sd-id="192">Orchestrating freight for industry leaders</span>
+         </div>
+         <div class="flex flex-wrap justify-center gap-16 md:gap-24 opacity-30 grayscale" data-sd-id="193">
+            <div class="text-2xl font-black italic" data-sd-id="194">KINETIC</div>
+            <div class="text-2xl font-serif" data-sd-id="195">NORTHERN</div>
+            <div class="text-2xl font-bold flex items-center gap-2" data-sd-id="196"><iconify-icon icon="lucide:package"></iconify-icon> AXIS</div>
+            <div class="text-2xl font-medium tracking-[0.2em]" data-sd-id="197">SOLARIS</div>
+            <div class="text-2xl italic font-light underline underline-offset-4" data-sd-id="198">Vector</div>
+         </div>
+      </div>
+    </section>
+
+    <!-- Case Study Cards -->
+    <section class="py-32 px-6 md:px-12 lg:px-28 bg-[#F3F1EA]" data-sd-id="199">
+      <div class="max-w-7xl mx-auto" data-sd-id="200">
+        <div class="flex justify-between items-end mb-16" data-sd-id="201">
+          <h2 class="text-4xl font-medium" data-sd-id="202">Editorial Perspective</h2>
+          <a href="#" id="view-all-cases" class="font-bold flex items-center gap-2 pb-1 border-b-2 border-[#171916]" data-sd-id="203">Read all stories</a>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-sd-id="204">
+          <!-- Card 1 -->
+          <a href="#" id="case-01" class="group block bg-white rounded-[24px] overflow-hidden border border-[#D9D7CE] transition-all hover:shadow-xl" data-sd-id="205">
+             <div class="aspect-[4/3] bg-[#C9E5F0] flex items-center justify-center p-12" data-sd-id="206">
+                <iconify-icon icon="lucide:factory" class="text-6xl text-[#171916] group-hover:scale-110 transition-transform"></iconify-icon>
+             </div>
+             <div class="p-8 space-y-4" data-sd-id="207">
+                <div class="text-[10px] font-bold text-[#6E716A] uppercase tracking-widest" data-sd-id="208">Manufacturing</div>
+                <h3 class="text-2xl font-medium leading-tight" data-sd-id="209">How a global steel producer eliminated 40% of manual data entry.</h3>
+                <div class="flex items-center gap-2 pt-4" data-sd-id="210">
+                   <span class="text-sm font-bold" data-sd-id="211">Read Story</span>
+                   <iconify-icon icon="lucide:arrow-right" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                </div>
+             </div>
+          </a>
+          <!-- Card 2 -->
+          <a href="#" id="case-02" class="group block bg-white rounded-[24px] overflow-hidden border border-[#D9D7CE] transition-all hover:shadow-xl" data-sd-id="212">
+             <div class="aspect-[4/3] bg-[#171916] flex items-center justify-center p-12" data-sd-id="213">
+                <iconify-icon icon="lucide:truck" class="text-6xl text-[#C8F45D] group-hover:rotate-12 transition-transform"></iconify-icon>
+             </div>
+             <div class="p-8 space-y-4" data-sd-id="214">
+                <div class="text-[10px] font-bold text-[#6E716A] uppercase tracking-widest" data-sd-id="215">CPG Distribution</div>
+                <h3 class="text-2xl font-medium leading-tight" data-sd-id="216">Scaling beverage distribution without increasing headcount.</h3>
+                <div class="flex items-center gap-2 pt-4" data-sd-id="217">
+                   <span class="text-sm font-bold" data-sd-id="218">Read Story</span>
+                   <iconify-icon icon="lucide:arrow-right" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                </div>
+             </div>
+          </a>
+          <!-- Card 3 -->
+          <a href="#" id="case-03" class="group block bg-white rounded-[24px] overflow-hidden border border-[#D9D7CE] transition-all hover:shadow-xl" data-sd-id="219">
+             <div class="aspect-[4/3] bg-[#D9D7CE] flex items-center justify-center p-12" data-sd-id="220">
+                <iconify-icon icon="lucide:anchor" class="text-6xl text-[#171916] group-hover:-translate-y-2 transition-transform"></iconify-icon>
+             </div>
+             <div class="p-8 space-y-4" data-sd-id="221">
+                <div class="text-[10px] font-bold text-[#6E716A] uppercase tracking-widest" data-sd-id="222">Port Logistics</div>
+                <h3 class="text-2xl font-medium leading-tight" data-sd-id="223">Reducing drayage dwell time with predictive AI dispatch.</h3>
+                <div class="flex items-center gap-2 pt-4" data-sd-id="224">
+                   <span class="text-sm font-bold" data-sd-id="225">Read Story</span>
+                   <iconify-icon icon="lucide:arrow-right" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                </div>
+             </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsroom Strip -->
+    <section id="news" class="py-12 border-y border-[#D9D7CE] overflow-hidden bg-white" data-sd-id="226">
+       <div class="flex whitespace-nowrap animate-[marquee_30s_linear_infinite]" data-sd-id="227">
+          <div class="flex items-center gap-8 mx-8" data-sd-id="228">
+             <span class="text-[11px] font-bold text-[#6E716A]" data-sd-id="229">NEWSROOM:</span>
+             <span class="text-sm font-medium" data-sd-id="230">Wayfinder raises $40M Series B to expand AI autonomous freight...</span>
+             <span class="w-1.5 h-1.5 rounded-full bg-[#D9D7CE]" data-sd-id="231"></span>
+             <span class="text-sm font-medium" data-sd-id="232">Named "Hottest Supply Chain Tech 2024" by Logistics Weekly...</span>
+             <span class="w-1.5 h-1.5 rounded-full bg-[#D9D7CE]" data-sd-id="233"></span>
+             <span class="text-sm font-medium" data-sd-id="234">Announcing partnership with top-tier Class I Rail networks...</span>
+             <span class="w-1.5 h-1.5 rounded-full bg-[#D9D7CE]" data-sd-id="235"></span>
+          </div>
+          <!-- Repeat for smooth loop -->
+          <div class="flex items-center gap-8 mx-8" data-sd-id="236">
+             <span class="text-[11px] font-bold text-[#6E716A]" data-sd-id="237">NEWSROOM:</span>
+             <span class="text-sm font-medium" data-sd-id="238">Wayfinder raises $40M Series B to expand AI autonomous freight...</span>
+             <span class="w-1.5 h-1.5 rounded-full bg-[#D9D7CE]" data-sd-id="239"></span>
+             <span class="text-sm font-medium" data-sd-id="240">Named "Hottest Supply Chain Tech 2024" by Logistics Weekly...</span>
+             <span class="w-1.5 h-1.5 rounded-full bg-[#D9D7CE]" data-sd-id="241"></span>
+             <span class="text-sm font-medium" data-sd-id="242">Announcing partnership with top-tier Class I Rail networks...</span>
+             <span class="w-1.5 h-1.5 rounded-full bg-[#D9D7CE]" data-sd-id="243"></span>
+          </div>
+       </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="demo" class="py-32 px-6 md:px-12 lg:px-28 bg-[#171916] text-[#FCFCF8] text-center" data-sd-id="244">
+       <div class="max-w-4xl mx-auto space-y-12" data-sd-id="245">
+          <h2 class="display-text text-white" data-sd-id="246">Ready for the<br>autonomous age?</h2>
+          <p class="text-xl text-white/60 max-w-xl mx-auto" data-sd-id="247">Join 500+ manufacturers who have automated their freight lifecycle with Wayfinder.</p>
+          <div class="flex flex-col md:flex-row justify-center gap-6" data-sd-id="248">
+             <button class="btn-primary px-12 py-5 rounded-full text-lg font-bold" data-sd-id="249">Get Started Now</button>
+             <button class="px-12 py-5 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-lg font-bold" data-sd-id="250">Talk to Sales</button>
+          </div>
+       </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 md:px-12 lg:px-28 bg-white border-t border-[#D9D7CE]" data-sd-id="251">
+       <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12" data-sd-id="252">
+          <div class="col-span-2 space-y-6" data-sd-id="253">
+             <div class="flex items-center gap-2" data-sd-id="254">
+                <div class="w-8 h-8 bg-[#171916] rounded-lg flex items-center justify-center" data-sd-id="255">
+                  <iconify-icon icon="lucide:route" class="text-[#C8F45D] text-xl"></iconify-icon>
+                </div>
+                <span class="text-[#171916] font-bold tracking-tighter text-xl" data-sd-id="256">WAYFINDER</span>
+             </div>
+             <p class="text-sm text-[#6E716A] max-w-xs" data-sd-id="257">The autonomous freight coordinator for manufacturers. Built to scale, designed for reliability.</p>
+             <div class="flex gap-4" data-sd-id="258">
+                <a href="#" id="social-x" class="w-10 h-10 rounded-full border border-[#D9D7CE] flex items-center justify-center hover:bg-[#F3F1EA] transition-colors" data-sd-id="259"><iconify-icon icon="lucide:twitter"></iconify-icon></a>
+                <a href="#" id="social-li" class="w-10 h-10 rounded-full border border-[#D9D7CE] flex items-center justify-center hover:bg-[#F3F1EA] transition-colors" data-sd-id="260"><iconify-icon icon="lucide:linkedin"></iconify-icon></a>
+             </div>
+          </div>
+          
+          <div class="space-y-4" data-sd-id="261">
+             <h4 class="text-xs font-bold uppercase tracking-widest text-[#6E716A]" data-sd-id="262">Product</h4>
+             <ul class="space-y-2 text-sm" data-sd-id="263">
+                <li data-sd-id="264"><a href="#" id="f-link-1" class="hover:underline" data-sd-id="265">Capture</a></li>
+                <li data-sd-id="266"><a href="#" id="f-link-2" class="hover:underline" data-sd-id="267">Orchestrate</a></li>
+                <li data-sd-id="268"><a href="#" id="f-link-3" class="hover:underline" data-sd-id="269">Resolve</a></li>
+                <li data-sd-id="270"><a href="#" id="f-link-4" class="hover:underline" data-sd-id="271">Network</a></li>
+             </ul>
+          </div>
+
+          <div class="space-y-4" data-sd-id="272">
+             <h4 class="text-xs font-bold uppercase tracking-widest text-[#6E716A]" data-sd-id="273">Company</h4>
+             <ul class="space-y-2 text-sm" data-sd-id="274">
+                <li data-sd-id="275"><a href="#" id="f-link-5" class="hover:underline" data-sd-id="276">About</a></li>
+                <li data-sd-id="277"><a href="#" id="f-link-6" class="hover:underline" data-sd-id="278">Newsroom</a></li>
+                <li data-sd-id="279"><a href="#" id="f-link-7" class="hover:underline" data-sd-id="280">Careers</a></li>
+                <li data-sd-id="281"><a href="#" id="f-link-8" class="hover:underline" data-sd-id="282">Legal</a></li>
+             </ul>
+          </div>
+
+          <div class="col-span-2 lg:col-span-2 space-y-4" data-sd-id="283">
+             <h4 class="text-xs font-bold uppercase tracking-widest text-[#6E716A]" data-sd-id="284">Stay Updated</h4>
+             <form class="flex gap-2" data-sd-id="285">
+                <input type="email" placeholder="email@company.com" class="bg-[#F3F1EA] border border-[#D9D7CE] rounded-full px-4 py-2 text-sm flex-1 outline-none focus:ring-1 focus:ring-[#171916]" data-sd-id="286">
+                <button class="bg-[#171916] text-white px-4 py-2 rounded-full text-xs font-bold" data-sd-id="287">Join</button>
+             </form>
+             <p class="text-[10px] text-[#6E716A]" data-sd-id="288"> 2024 Wayfinder Inc. All rights reserved.</p>
+          </div>
+       </div>
+    </footer>
+  </div>
+
+  <style>
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
+
+</body></html>

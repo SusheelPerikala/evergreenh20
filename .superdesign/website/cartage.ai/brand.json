@@ -1,0 +1,311 @@
+{
+  "meta": {
+    "url": "https://www.cartage.ai/",
+    "title": "Wilson",
+    "description": "Cartage is building Wilson — the only AI built to manage freight for manufacturers and distributors. Wilson handles the tedious work of shipping -- creating loads, booking, tracking, and managing shipments end-to-end.",
+    "language": "",
+    "viewport": "width=device-width",
+    "themeColor": null,
+    "ogImage": "https://framerusercontent.com/images/2GSJmqJBQhaiSVbWNTT6xLueJ7Y.png",
+    "ogTitle": "Wilson",
+    "ogDescription": "Cartage is building Wilson — the only AI built to manage freight for manufacturers and distributors. Wilson handles the tedious work of shipping -- creating loads, booking, tracking, and managing shipments end-to-end."
+  },
+  "theme": {
+    "mode": "light",
+    "bodyBackground": "#ffffff",
+    "isDark": false,
+    "confidence": 0.9
+  },
+  "brand": {
+    "name": "Wilson",
+    "favicon": {
+      "href": "https://framerusercontent.com/images/hfZ3nebIWb8JwVpBSTnZvx92K6Y.png",
+      "type": null
+    }
+  },
+  "colors": {
+    "dominant": [
+      {
+        "hex": "#000000",
+        "ratio": 0.969
+      },
+      {
+        "hex": "#0000ee",
+        "ratio": 0.013
+      },
+      {
+        "hex": "#25211c",
+        "ratio": 0.008
+      },
+      {
+        "hex": "#ffffff",
+        "ratio": 0.005
+      },
+      {
+        "hex": "#666460",
+        "ratio": 0.003
+      },
+      {
+        "hex": "#92908d",
+        "ratio": 0.001
+      },
+      {
+        "hex": "#333333",
+        "ratio": 0.001
+      }
+    ],
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "source": "computed"
+      },
+      {
+        "hex": "#000000",
+        "role": "foreground",
+        "source": "computed"
+      },
+      {
+        "hex": "#0000ee",
+        "role": "primary",
+        "source": "heuristic"
+      },
+      {
+        "hex": "#666460",
+        "role": "neutral",
+        "source": "heuristic"
+      }
+    ],
+    "cssVariables": {
+      "--token-44eb81fb-3549-48cb-ba32-cbd8f17bdcbe": "#25211c",
+      "--token-a4f734a0-86c8-4e20-8521-56cd827860af": "#666460",
+      "--token-7421c2ee-2269-4784-abeb-97d2cc96becb": "#92908d",
+      "--token-5f47188a-97db-46b5-8050-005a1c44edff": "#d3d3d2",
+      "--token-4a5f1dd5-a025-4da2-8072-8682ec46ad0a": "#fff",
+      "--token-01b66c7c-367a-45e4-85b0-666c7b7a6a10": "#ffffff",
+      "--token-259452a3-8aa9-4ae6-98fa-7765d7fc62d0": "#ffffff",
+      "--token-044cfa37-a84a-4974-88be-5819577f5b8a": "#f1efec",
+      "--token-96cb54f7-3bc1-4a62-a8b3-a1e7122abc50": "#bae3ff",
+      "--token-0421a2a6-3c00-4b91-9305-0c658d739e42": "#fff3d1",
+      "--token-29df4b88-ffb8-44e1-8600-9d512976ad23": "#ffd45c",
+      "--token-f2e3e507-bb1f-43aa-a47c-b4c53713f6d7": "#a9dcff",
+      "--token-2248a9f7-6672-47b7-8433-d44dd8c6f067": "#0206a7",
+      "--token-186b6c44-2206-403e-90d3-adc6a96abedd": "#b8d6ff",
+      "--token-dd77fb86-030a-4dbf-b208-9fa6146aa549": "#ffdaa0",
+      "--token-5e4616bb-d369-478b-a6ba-4b9bb2d8c0cd": "#bdf2a6",
+      "--token-a46ecfa0-98ee-4120-9b89-912d1b324b24": "#003e01",
+      "--token-2d9bdfcb-4eb6-49c5-b4b2-4a15f020269b": "#ebdcff",
+      "--framer-link-text-color": "#09f",
+      "--framer-text-color": "#000"
+    },
+    "gradients": []
+  },
+  "logo": {
+    "candidates": [
+      {
+        "selector": "svg",
+        "href": null,
+        "type": "svg",
+        "width": 122,
+        "height": 27,
+        "svgContent": "<svg style=\"width:100%;height:100%;\" preserveAspectRatio=\"none\" width=\"100%\" height=\"100%\"><use href=\"#svg-1534885297_5941\"></use></svg>",
+        "colors": [],
+        "isLight": false,
+        "isDark": false,
+        "needsDarkBackground": false,
+        "needsLightBackground": false,
+        "_score": 40,
+        "uploadedUrl": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/5fe81bae-e236-4b70-b607-9dccb12825b0/logo/c4960804-39c5-4152-94e3-7e4acfb99158.svg"
+      },
+      {
+        "selector": "img",
+        "href": "https://framerusercontent.com/images/2iQsJBznBgwKTofcu4t1X7Z6Hc.svg?width=256&height=256",
+        "type": "svg?width=256&height=256",
+        "width": 256,
+        "height": 256,
+        "svgContent": null,
+        "colors": [],
+        "isLight": false,
+        "isDark": false,
+        "needsDarkBackground": false,
+        "needsLightBackground": false,
+        "_score": 20
+      }
+    ],
+    "best": {
+      "selector": "svg",
+      "href": null,
+      "type": "svg",
+      "width": 122,
+      "height": 27,
+      "svgContent": "<svg style=\"width:100%;height:100%;\" preserveAspectRatio=\"none\" width=\"100%\" height=\"100%\"><use href=\"#svg-1534885297_5941\"></use></svg>",
+      "colors": [],
+      "isLight": false,
+      "isDark": false,
+      "needsDarkBackground": false,
+      "needsLightBackground": false,
+      "_score": 40,
+      "uploadedUrl": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/5fe81bae-e236-4b70-b607-9dccb12825b0/logo/c4960804-39c5-4152-94e3-7e4acfb99158.svg"
+    }
+  },
+  "fonts": {
+    "computed": [
+      {
+        "family": "sans-serif",
+        "weights": [
+          "400"
+        ],
+        "source": "web"
+      },
+      {
+        "family": "\"Suisse Int'l Medium\", \"Suisse Int'l Medium Placeholder\", sans-serif",
+        "weights": [
+          "400"
+        ],
+        "source": "web"
+      },
+      {
+        "family": "\"SuisseIntl-Regular-WebS ¶\", \"SuisseIntl-Regular-WebS ¶ Placeholder\", sans-serif",
+        "weights": [
+          "400"
+        ],
+        "source": "web"
+      }
+    ],
+    "baseSizePx": 12
+  },
+  "confidence": {
+    "colorExtraction": 0.9,
+    "logoDetection": 0.85,
+    "fontDetection": 0.8
+  },
+  "screenshot": {
+    "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/5fe81bae-e236-4b70-b607-9dccb12825b0/screenshot.png",
+    "width": 1920,
+    "height": 12547,
+    "sizeBytes": 9438505,
+    "uploadedAt": "2026-07-23T00:30:50.980Z"
+  },
+  "assets": {
+    "80c231eb-0e39-44cd-b8e3-f53757a5095a": {
+      "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/5fe81bae-e236-4b70-b607-9dccb12825b0/assets/80c231eb-0e39-44cd-b8e3-f53757a5095a.jpg",
+      "name": "34ZOkVT3xvZolwQpPdFcSohb1M.jpg",
+      "type": "image",
+      "description": "Photo of two men sitting at a wooden table with laptops, engaged in conversation near large windows with greenery visible. The main subjects are centered in the frame with significant negative space on the left side and bright natural light from windows on the right, creating a cool-toned, professional atmosphere. The aesthetic is modern and minimalist with a clean, well-lit corporate environment suitable for text overlay on the left.",
+      "metadata": {
+        "size": "298.32 KB",
+        "mimeType": "image/jpeg",
+        "sizeBytes": 305478,
+        "uploadedAt": "2026-07-23T00:30:51.315Z"
+      }
+    },
+    "44970b2c-93dd-4fe5-8d14-88eb21dd86af": {
+      "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/5fe81bae-e236-4b70-b607-9dccb12825b0/assets/44970b2c-93dd-4fe5-8d14-88eb21dd86af.png",
+      "name": "nyKl5uEDp3TrGtdF7I2WTQ0pLo.png",
+      "type": "image",
+      "description": "Close-up product photo of a digital clock display showing 7:30 on a wooden surface with blurred green plant foliage in the foreground. The clock is positioned in the center-right of the frame with soft, warm natural lighting and shallow depth of field creating a soft, lifestyle aesthetic. The neutral wood tones and gentle focus make this suitable for text placement in the upper left or bottom areas.",
+      "metadata": {
+        "size": "640.05 KB",
+        "mimeType": "image/png",
+        "sizeBytes": 655413,
+        "uploadedAt": "2026-07-23T00:30:51.218Z"
+      }
+    },
+    "3ced92cf-57e7-4c1c-a5e2-8f69ff0c7612": {
+      "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/5fe81bae-e236-4b70-b607-9dccb12825b0/assets/3ced92cf-57e7-4c1c-a5e2-8f69ff0c7612.jpg",
+      "name": "0uFPmXl6CU6gHMcrq5YjR7SeOE.jpg",
+      "type": "image",
+      "description": "Minimalist photograph of a semi-truck on a highway stretching across a flat landscape against a clear sky. The vehicle occupies the center-right portion of the image with substantial empty sky and road space above and to the left, ideal for text overlay. The cool, clean aesthetic with high contrast and muted colors conveys efficiency and forward movement.",
+      "metadata": {
+        "size": "36.51 KB",
+        "mimeType": "image/jpeg",
+        "sizeBytes": 37389,
+        "uploadedAt": "2026-07-23T00:30:51.461Z"
+      }
+    },
+    "ec3bc767-d155-48f9-bd29-f3423f96e230": {
+      "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/5fe81bae-e236-4b70-b607-9dccb12825b0/assets/ec3bc767-d155-48f9-bd29-f3423f96e230.jpg",
+      "name": "acC5n8QpHNevcLHcf7fyZCeewvs.jpg",
+      "type": "image",
+      "description": "Flat lay photograph of an unmade white bed with rumpled sheets and pillows against a white wooden headboard. The bed fills most of the frame with the headboard creating vertical rhythm, leaving minimal negative space for text. The soft, monochromatic white color palette and gentle, diffused lighting create a calm, minimal aesthetic.",
+      "metadata": {
+        "size": "210.18 KB",
+        "mimeType": "image/jpeg",
+        "sizeBytes": 215228,
+        "uploadedAt": "2026-07-23T00:30:51.316Z"
+      }
+    },
+    "af31e312-e21d-448b-8d16-0638e26cd11c": {
+      "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/5fe81bae-e236-4b70-b607-9dccb12825b0/assets/af31e312-e21d-448b-8d16-0638e26cd11c.png",
+      "name": "KDXoDvrg56WpOzv0Gm8SUoSv96g.png",
+      "type": "image",
+      "description": "Overhead shot of hands sketching architectural floor plans on white paper surrounded by wooden architectural models and design tools. The hands and sketch occupy the center of the composition with organized workspace around the edges providing some negative space. The warm wood tones, natural task lighting, and busy-but-organized aesthetic convey creativity and design process.",
+      "metadata": {
+        "size": "587.70 KB",
+        "mimeType": "image/png",
+        "sizeBytes": 601806,
+        "uploadedAt": "2026-07-23T00:30:51.650Z"
+      }
+    },
+    "c07f695a-6df9-4a24-9839-ea0d449d17ff": {
+      "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/5fe81bae-e236-4b70-b607-9dccb12825b0/assets/c07f695a-6df9-4a24-9839-ea0d449d17ff.jpg",
+      "name": "Qi5cgPWYSZ1AHsvqnjrl0vDm5s.jpg",
+      "type": "image",
+      "description": "Landscape photograph of a modern elevated highway curving through dense green forest with mountains visible in the distant haze. The road curves through the center with lush green forest dominating two-thirds of the frame and sky in the upper portion, creating depth and movement. The cool green and blue tones with soft natural lighting create a serene, expansive mood with ample sky space for text.",
+      "metadata": {
+        "size": "460.60 KB",
+        "mimeType": "image/jpeg",
+        "sizeBytes": 471654,
+        "uploadedAt": "2026-07-23T00:30:51.901Z"
+      }
+    },
+    "085d275d-29b1-49ae-b6a7-67a28dad9890": {
+      "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/5fe81bae-e236-4b70-b607-9dccb12825b0/assets/085d275d-29b1-49ae-b6a7-67a28dad9890.png",
+      "name": "zBqRimMjz1834SvaHz72hOb48.png",
+      "type": "image",
+      "description": "Architectural interior photograph of a minimalist open-plan office space with concrete flooring, white walls, simple desk setup, and black storage units. The main furniture is positioned left-center with significant empty white wall space on the right side ideal for text overlay. The neutral gray, black, and white color palette with cool artificial lighting creates a stark, professional, contemporary aesthetic.",
+      "metadata": {
+        "size": "575.35 KB",
+        "mimeType": "image/png",
+        "sizeBytes": 589155,
+        "uploadedAt": "2026-07-23T00:30:52.081Z"
+      }
+    },
+    "72274d7c-a1f3-400d-9fa8-0b76e171b0e4": {
+      "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/5fe81bae-e236-4b70-b607-9dccb12825b0/assets/72274d7c-a1f3-400d-9fa8-0b76e171b0e4.jpg",
+      "name": "7h4pBrwaNLu92QqBAJaRL2ND9xY.jpg",
+      "type": "image",
+      "description": "Wide landscape photograph of a dense forest floor covered in moss and fallen logs with tall evergreen trees. The forest fills the entire frame with no clear focal point, creating an immersive natural scene with predominantly green tones and soft, diffused natural lighting. The aesthetic is organic and peaceful with minimal negative space, challenging for text placement.",
+      "metadata": {
+        "size": "972.17 KB",
+        "mimeType": "image/jpeg",
+        "sizeBytes": 995503,
+        "uploadedAt": "2026-07-23T00:30:52.043Z"
+      }
+    },
+    "02e39624-2b9b-402e-a891-f70015c4e6f5": {
+      "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/5fe81bae-e236-4b70-b607-9dccb12825b0/assets/02e39624-2b9b-402e-a891-f70015c4e6f5.jpg",
+      "name": "efrXRiyHzJMzUaRPNs0bXXxpSlY.jpg",
+      "type": "image",
+      "description": "Industrial photograph of a worker in safety gear using machinery in a manufacturing facility with metal structures and yellow/blue industrial elements visible. The worker is positioned slightly off-center with the industrial space extending behind, creating depth and context. The warm industrial lighting, strong blue and yellow color accents, and busy environment convey productivity and skilled labor.",
+      "metadata": {
+        "size": "440.85 KB",
+        "mimeType": "image/jpeg",
+        "sizeBytes": 451434,
+        "uploadedAt": "2026-07-23T00:30:51.939Z"
+      }
+    },
+    "498da807-232f-4c26-9cf6-6247c67f9d87": {
+      "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/5fe81bae-e236-4b70-b607-9dccb12825b0/assets/498da807-232f-4c26-9cf6-6247c67f9d87.png",
+      "name": "LpqmRNfnVmlrzRR5RnoVizCh2U.png",
+      "type": "image",
+      "description": "Interior photograph of a minimalist living room with a white sofa, wooden ceiling beams, geometric patterned rug, and large windows showing greenery outside. The seating area is centered with warm wood tones and neutral upholstery, substantial window space on the right providing negative space for text. The warm, natural aesthetic with soft daylight creates an inviting, sophisticated, and spacious mood.",
+      "metadata": {
+        "size": "1.08 MB",
+        "mimeType": "image/png",
+        "sizeBytes": 1132826,
+        "uploadedAt": "2026-07-23T00:30:52.099Z"
+      }
+    }
+  }
+}
