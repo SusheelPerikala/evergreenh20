@@ -1,20 +1,13 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://evergreenh20.com"),
   title: {
-    default: "EvergreenH20 — Better water for your whole home",
-    template: "%s · EvergreenH20",
+    default: "Evergreen H2O | Better Water, Built Better",
+    template: "%s | Evergreen H2O",
   },
-  description:
-    "Professional whole-home, reverse-osmosis, countertop, and shower water filtration systems.",
-  applicationName: "EvergreenH20",
-  category: "Water filtration",
-};
-
-export const viewport: Viewport = {
-  themeColor: "#15372f",
-  colorScheme: "light",
+  description: "Premium whole-home and drinking-water treatment systems built with high-flow components and professional installation.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

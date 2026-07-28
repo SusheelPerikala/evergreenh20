@@ -1,103 +1,63 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SiteFooter } from "@/components/footer";
 import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 import { Icon } from "@/components/icon";
-import { ProductSilhouette } from "@/components/product-visuals";
-import { products } from "@/data/products";
+import { InteriorHero, ProductGrid } from "@/components/site-sections";
 
 export const metadata: Metadata = {
-  title: "Water Filtration Systems",
-  description: "Compare EvergreenH20 whole-home, reverse-osmosis, countertop, and bath filtration options.",
+  title: "Products | Evergreen H2O",
+  description: "Explore Evergreen H2O whole-home, drinking-water, and add-on filtration systems.",
 };
 
+const categories = [
+  { id: "whole-home", number: "01", title: "Whole Home Systems", text: "Treat hardness, chlorine, and sediment from the point water enters the home." },
+  { id: "drinking-water", number: "02", title: "Drinking Water Systems", text: "Dedicated reverse-osmosis systems for clean, convenient water at the kitchen tap." },
+  { id: "add-ons", number: "03", title: "Add Ons", text: "Pre-filtration and protection components that complete a durable treatment plan." },
+];
+
 export default function ProductsPage() {
-  const availableProducts = products.filter((product) => product.stockTone !== "restock");
-
   return (
-    <div id="top">
-      <a className="skip-link" href="#main-content">Skip to content</a>
+    <>
       <Header />
-      <main id="main-content" className="catalog-page" tabIndex={-1}>
-        <section className="catalog-hero">
-          <span className="eyebrow">EvergreenH20 system guide</span>
-          <h1>Compare the right level of filtration.</h1>
-          <p>Start with where you want the change, then compare placement, ownership, and current preview inventory in one clear view.</p>
-          <div className="hero-actions">
-            <a className="button" href="#catalog">Browse all systems <Icon name="arrow" /></a>
-            <a className="button button-ghost" href="#comparison">Compare at a glance</a>
-          </div>
-        </section>
+      <main id="main-content">
+        <InteriorHero
+          eyebrow="Products"
+          title={<>One home.<br />One complete water plan.</>}
+          description="Browse by system type, then request a recommendation based on your home, water conditions, and priorities."
+          image={2}
+        >
+          <Link className="button button-light" href="/contact">Quick Quote <Icon name="arrow" /></Link>
+        </InteriorHero>
 
-        <section className="inventory-section" id="in-stock" aria-labelledby="inventory-title">
-          <div>
-            <span className="eyebrow">Inventory preview</span>
-            <h2 id="inventory-title">What is available now.</h2>
-            <p>These stock states demonstrate the catalog structure. Connect them to your inventory source before launch.</p>
-          </div>
-          <div className="inventory-list">
-            {availableProducts.map((product) => (
-              <a href={`#${product.slug}`} key={product.slug}>
-                <span className={`stock-dot ${product.stockTone}`} />
-                <span><strong>{product.name}</strong><small>{product.stock}</small></span>
-                <Icon name="arrow" />
-              </a>
-            ))}
-          </div>
-        </section>
-
-        <section className="catalog-list" id="catalog" aria-labelledby="catalog-title">
-          <div className="catalog-heading">
-            <span className="eyebrow">All systems</span>
-            <h2 id="catalog-title">Built around where your water is used.</h2>
-          </div>
-          {products.map((product, index) => (
-            <article className="catalog-product" id={product.slug} key={product.slug}>
-              <div className="catalog-product-art" aria-hidden="true">
-                <span className="product-number">0{index + 1}</span>
-                <ProductSilhouette variant={product.art} />
-                <span className={`stock-badge ${product.stockTone}`}><i />{product.stock}</span>
-              </div>
-              <div className="catalog-product-copy">
-                <span className="eyebrow">{product.category}</span>
-                <h2>{product.name}</h2>
-                <p>{product.description}</p>
-                <dl>
-                  <div><dt>Placement</dt><dd>{product.placement}</dd></div>
-                  <div><dt>Best suited to</dt><dd>{product.bestFor}</dd></div>
-                  <div><dt>Ownership</dt><dd>{product.service}</dd></div>
-                </dl>
-                <ul>{product.highlights.map((highlight) => <li key={highlight}><Icon name="check" />{highlight}</li>)}</ul>
-                <div className="catalog-product-action">
-                  <strong>{product.price}</strong>
-                  <a className="text-link" href="#guide">Check the buying guide <Icon name="arrow" /></a>
-                </div>
-              </div>
-            </article>
+        <section className="category-gateway" aria-label="Product categories">
+          {categories.map((category) => (
+            <a href={"#" + category.id} key={category.id}>
+              <span>{category.number}</span>
+              <div><h2>{category.title}</h2><p>{category.text}</p></div>
+              <Icon name="arrow" />
+            </a>
           ))}
         </section>
 
-        <section className="comparison-section" id="comparison" aria-labelledby="comparison-title">
-          <div className="comparison-heading"><span className="eyebrow">Side-by-side</span><h2 id="comparison-title">Compare the essentials.</h2><p>Use this as a starting point; final configuration depends on the home, water source, and installation space.</p></div>
-          <div className="comparison-scroll" tabIndex={0} aria-label="Scrollable product comparison">
-            <table>
-              <thead><tr><th scope="col">System</th><th scope="col">Placement</th><th scope="col">Starting price</th><th scope="col">Preview stock</th></tr></thead>
-              <tbody>{products.map((product) => <tr key={product.slug}><th scope="row"><a href={`#${product.slug}`}>{product.name}</a></th><td>{product.placement}</td><td>{product.price}</td><td><span className={`table-stock ${product.stockTone}`}><i />{product.stock}</span></td></tr>)}</tbody>
-            </table>
-          </div>
-        </section>
+        {categories.map((category) => (
+          <section className="catalog-section" id={category.id} key={category.id}>
+            <div className="catalog-heading">
+              <span className="eyebrow">Category {category.number}</span>
+              <h2>{category.title}</h2>
+            </div>
+            <ProductGrid category={category.id as "whole-home" | "drinking-water" | "add-ons"} />
+          </section>
+        ))}
 
-        <section className="buying-guide" id="guide" aria-labelledby="guide-title">
-          <div><span className="eyebrow">A clear way to choose</span><h2 id="guide-title">Three questions narrow the field.</h2></div>
-          <ol>
-            <li><span>01</span><div><strong>Where do you want the change?</strong><p>Every tap, one drinking-water tap, the countertop, or the shower.</p></div></li>
-            <li><span>02</span><div><strong>What space is available?</strong><p>Main-line access, cabinet room, counter space, and connection type shape the shortlist.</p></div></li>
-            <li><span>03</span><div><strong>How hands-on should ownership feel?</strong><p>Compare cartridge schedules, installation needs, and the support you want after purchase.</p></div></li>
-          </ol>
-          <Link className="button" href="/#our-story">See how we guide customers <Icon name="arrow" /></Link>
+        <section className="catalog-cta">
+          <span className="eyebrow">Not sure where to start?</span>
+          <h2>Start with the water,<br />not the equipment.</h2>
+          <p>We will help translate your water concerns into a clear system recommendation.</p>
+          <Link className="button" href="/contact">Get a Quick Quote <Icon name="arrow" /></Link>
         </section>
       </main>
-      <SiteFooter />
-    </div>
+      <Footer />
+    </>
   );
 }

@@ -1,32 +1,26 @@
-import type { ReactNode } from "react";
-import { SiteFooter } from "./footer";
 import { Header } from "./header";
+import { Footer } from "./footer";
 
-export function LegalPage({
-  eyebrow,
-  title,
-  intro,
-  children,
-}: {
+type LegalPageProps = {
   eyebrow: string;
   title: string;
   intro: string;
-  children: ReactNode;
-}) {
+  children: React.ReactNode;
+};
+
+export function LegalPage({ eyebrow, title, intro, children }: LegalPageProps) {
   return (
-    <div id="top">
-      <a className="skip-link" href="#main-content">Skip to content</a>
+    <>
       <Header />
-      <main id="main-content" className="legal-page" tabIndex={-1}>
-        <header className="legal-hero">
+      <main id="main-content" className="legal-page">
+        <header>
           <span className="eyebrow">{eyebrow}</span>
           <h1>{title}</h1>
           <p>{intro}</p>
-          <small>Last updated July 22, 2026</small>
         </header>
         <div className="legal-content">{children}</div>
       </main>
-      <SiteFooter />
-    </div>
+      <Footer />
+    </>
   );
 }
