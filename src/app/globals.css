@@ -60,36 +60,42 @@ section[id], article[id] { scroll-margin-top: 7rem; }
 .site-header {
   position: fixed;
   z-index: 40;
-  top: 1rem;
-  left: 50%;
+  top: 0;
+  left: 0;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  width: min(calc(100% - 2rem), 1420px);
-  min-height: 70px;
-  padding: .45rem .55rem .45rem 1rem;
-  color: var(--ink);
-  border: 1px solid rgba(10, 34, 27, .12);
-  border-radius: 18px;
-  background: rgba(251, 252, 248, .93);
-  box-shadow: 0 18px 60px rgba(10, 34, 27, .11);
-  backdrop-filter: blur(18px);
-  transform: translateX(-50%);
+  width: 100%;
+  min-height: 76px;
+  padding: .7rem clamp(1.1rem, 2.8vw, 3rem);
+  color: var(--white);
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(180deg, rgba(4, 22, 32, .68) 0%, rgba(4, 22, 32, .22) 58%, transparent 100%);
+  box-shadow: none;
+  transform: none;
+  transition: opacity .42s var(--ease), transform .42s var(--ease), visibility .42s;
+}
+.site-header.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-28px);
 }
 
 .header-brand { display: flex; align-items: center; width: max-content; }
-.header-brand .brand-logo { width: 188px; height: 52px; color: var(--ink); }
+.header-brand .brand-logo { width: 188px; height: 52px; color: var(--white); }
 .desktop-nav { display: flex; align-items: center; gap: clamp(1.4rem, 2.7vw, 3rem); }
-.desktop-nav a { position: relative; color: rgba(10, 34, 27, .72); font-size: .84rem; }
-.desktop-nav a::after { content: ""; position: absolute; right: 0; bottom: -.3rem; left: 0; height: 1px; background: var(--ink); transform: scaleX(0); transform-origin: right; transition: transform .25s var(--ease); }
+.desktop-nav a { position: relative; color: rgba(255, 255, 255, .78); font-size: .84rem; }
+.desktop-nav a::after { content: ""; position: absolute; right: 0; bottom: -.3rem; left: 0; height: 1px; background: var(--white); transform: scaleX(0); transform-origin: right; transition: transform .25s var(--ease); }
 .desktop-nav a:hover::after { transform: scaleX(1); transform-origin: left; }
 .header-actions { justify-self: end; display: flex; align-items: center; gap: .6rem; }
 .mobile-menu { display: none; position: relative; }
-.mobile-menu summary { display: grid; place-items: center; width: 44px; height: 44px; cursor: pointer; border: 1px solid var(--line); border-radius: 50%; background: var(--white); list-style: none; }
+.mobile-menu summary { display: grid; place-items: center; width: 44px; height: 44px; cursor: pointer; color: var(--white); border: 1px solid rgba(255,255,255,.4); border-radius: 50%; background: rgba(4,22,32,.2); list-style: none; }
 .mobile-menu summary::-webkit-details-marker { display: none; }
 .mobile-menu summary svg { width: 20px; height: 20px; }
 .mobile-menu nav { position: absolute; top: calc(100% + .8rem); right: 0; display: grid; width: min(330px, calc(100vw - 2rem)); padding: .6rem; border: 1px solid var(--line); border-radius: 18px; background: var(--white); box-shadow: 0 25px 60px rgba(10, 34, 27, .18); }
-.mobile-menu nav a { display: flex; align-items: center; justify-content: space-between; min-height: 50px; padding: .6rem .75rem; border-bottom: 1px solid var(--line); }
+.mobile-menu nav a { display: flex; align-items: center; justify-content: space-between; min-height: 50px; padding: .6rem .75rem; color: var(--ink); border-bottom: 1px solid var(--line); }
 .mobile-menu nav a:last-child { color: var(--white); border: 0; border-radius: 12px; background: var(--ink); }
 .mobile-menu nav svg { width: 16px; height: 16px; }
 
@@ -115,7 +121,7 @@ section[id], article[id] { scroll-margin-top: 7rem; }
 .button svg, .text-link svg, .product-copy > a svg, .category-gateway svg { width: 15px; height: 15px; transition: transform .25s var(--ease); }
 .button:hover svg, .text-link:hover svg, .product-copy > a:hover svg, .category-gateway a:hover svg { transform: translateX(4px); }
 .button-small { min-height: 46px; padding: .7rem 1.05rem; }
-.header-cta { color: var(--white); border-color: var(--ink); background: var(--ink); }
+.header-cta { color: var(--ink); border-color: var(--white); background: var(--white); }
 .header-cta:hover { color: var(--ink); background: var(--lime); border-color: var(--lime); }
 .button-ghost { color: var(--ink); border-color: rgba(10, 34, 27, .25); background: rgba(251, 252, 248, .7); backdrop-filter: blur(10px); }
 .button-ghost:hover { border-color: var(--white); background: var(--white); }

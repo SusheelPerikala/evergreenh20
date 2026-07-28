@@ -1,13 +1,25 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { BrandLogo } from "./brand-logo";
 import { Icon } from "./icon";
 import { navigation } from "@/data/site";
 
 export function Header() {
+  const [isHidden, setIsHidden] = useState(false);
+
+  useEffect(() => {
+    const updateHeader = () => setIsHidden(window.scrollY > 80);
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    return () => window.removeEventListener("scroll", updateHeader);
+  }, []);
+
   return (
     <>
       <a className="skip-link" href="#main-content">Skip to content</a>
-      <header className="site-header">
+      <header className={"site-header" + (isHidden ? " is-hidden" : "")}>
         <Link className="header-brand" href="/" aria-label="Evergreen H2O home">
           <BrandLogo compact />
         </Link>
