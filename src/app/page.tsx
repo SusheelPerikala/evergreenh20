@@ -14,26 +14,12 @@ export default function Home() {
           <div className="hero-photo" />
           <div className="hero-gradient" />
           <div className="hero-content">
-            <span className="hero-notice">Complete Home Package · savings available</span>
-            <span className="eyebrow">Whole-home water, handled</span>
-            <h1>Better water.<br /><span>Built for every tap.</span></h1>
-            <p>Premium components, high-flow engineering, and a clear path from water test to professional installation.</p>
+            <h1>Whole-home water filtration,<br /><span>without compromise.</span></h1>
+            <p>Premium components, high-flow engineering, and professional installation for better water at every tap.</p>
             <div className="hero-actions">
               <Link className="button" href="/contact">Quick Quote <Icon name="arrow" /></Link>
               <Link className="button button-ghost" href="/our-story">Learn More</Link>
             </div>
-          </div>
-          <div className="hero-spec-card">
-            <span><i /> System architecture</span>
-            <strong>High-flow by design.</strong>
-            <div><small>DISTRIBUTOR</small><b>1 1/4 in</b></div>
-            <div><small>MEDIA</small><b>Jacobi + CG10</b></div>
-            <div><small>ASSEMBLY</small><b>Built in USA</b></div>
-          </div>
-          <div className="hero-proof">
-            <span>NSF-certified components</span>
-            <span>USA-built systems</span>
-            <span>Professional installation</span>
           </div>
         </section>
 
@@ -59,7 +45,7 @@ export default function Home() {
             <div><span className="eyebrow">Best Sellers</span><h2 id="best-sellers-title">The systems homes<br />ask for most.</h2></div>
             <div><p>Whole-home and drinking-water equipment selected for durable service, strong flow, and straightforward ownership.</p><Link className="text-link" href="/products">All products <Icon name="arrow" /></Link></div>
           </div>
-          <ProductGrid featuredOnly />
+          <ProductGrid featuredOnly showAvailability={false} />
         </section>
 
         <FAQSection />

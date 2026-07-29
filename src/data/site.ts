@@ -13,7 +13,6 @@ export type Product = {
 
 export const navigation = [
   { label: "Products", href: "/products" },
-  { label: "In Stock", href: "/in-stock" },
   { label: "Reviews", href: "/reviews" },
   { label: "Our Story", href: "/our-story" },
 ];
@@ -70,11 +69,11 @@ export const products: Product[] = [
 
 export const superiority = [
   { number: "01", title: "Ceramic Disc Valve", detail: "Durable valve control engineered for dependable daily cycling." },
-  { number: "02", title: "Built in USA", detail: "Assembled with direct oversight and serviceability in mind." },
-  { number: "03", title: "Jacobi Carbon", detail: "Premium coconut shell activated carbon from a trusted media specialist." },
-  { number: "04", title: "ResinTech CG10", detail: "Ten-percent crosslinked resin selected for demanding water conditions." },
-  { number: "05", title: "Higher Flow", detail: "A 1 1/4-inch distributor tube supports better whole-home flow." },
-  { number: "06", title: "NSF Components", detail: "System components are selected with recognized NSF certifications." },
+  { number: "02", title: "Jacobi Carbon", detail: "Premium coconut shell activated carbon from a trusted media specialist." },
+  { number: "03", title: "ResinTech CG10", detail: "Ten-percent crosslinked resin selected for demanding water conditions." },
+  { number: "04", title: "Higher Flow", detail: "A 1 1/4-inch distributor tube supports better whole-home flow." },
+  { number: "05", title: "NSF Components", detail: "System components are selected with recognized NSF certifications." },
+  { number: "06", title: "Built in USA", detail: "Assembled with direct oversight and serviceability in mind." },
 ];
 
 export const faqs = [

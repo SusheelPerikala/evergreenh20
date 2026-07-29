@@ -44,9 +44,11 @@ export function ProductVisual({ type }: { type: Product["visual"] }) {
 export function ProductGrid({
   featuredOnly = false,
   category,
+  showAvailability = true,
 }: {
   featuredOnly?: boolean;
   category?: Product["categorySlug"];
+  showAvailability?: boolean;
 }) {
   const visible = products.filter((product) => {
     if (featuredOnly && !product.featured) return false;
@@ -61,9 +63,11 @@ export function ProductGrid({
           <div className="product-art">
             <span className="product-index">0{index + 1}</span>
             <ProductVisual type={product.visual} />
-            <span className={("stock-pill " + product.availabilityTone)}>
-              <i /> {product.availability}
-            </span>
+            {showAvailability && (
+              <span className={("stock-pill " + product.availabilityTone)}>
+                <i /> {product.availability}
+              </span>
+            )}
           </div>
           <div className="product-copy">
             <span>{product.category}</span>
@@ -139,7 +143,9 @@ export function InstallationGallery({
       <div className="installation-grid">
         {visible.map((source, index) => (
           <figure className={"installation-item item-" + ((index % 5) + 1)} key={source}>
-            <img src={source} alt={"Evergreen H2O installation " + (index + 1)} loading={index < 4 ? "eager" : "lazy"} />
+            <a href={source} target="_blank" rel="noreferrer" aria-label={"Open installation " + (index + 1) + " in a new tab"}>
+              <img src={source} alt={"Evergreen H2O installation " + (index + 1)} loading={index < 4 ? "eager" : "lazy"} />
+            </a>
             <figcaption><span>Installation</span><strong>{String(index + 1).padStart(2, "0")}</strong></figcaption>
           </figure>
         ))}
