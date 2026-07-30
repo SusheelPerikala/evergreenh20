@@ -84,13 +84,18 @@ export function ReviewGrid({ compact = false }: { compact?: boolean }) {
 }
 
 export function InstallationGallery({
+  excludeSources = [],
   limit,
   heading = true,
 }: {
+  excludeSources?: string[];
   limit?: number;
   heading?: boolean;
 }) {
-  const visible = typeof limit === "number" ? installations.slice(0, limit) : installations;
+  const available = installations
+    .map((source, index) => ({ source, index }))
+    .filter(({ source }) => !excludeSources.includes(source));
+  const visible = typeof limit === "number" ? available.slice(0, limit) : available;
   return (
     <section className="installation-section" id="installations" aria-labelledby={heading ? "installations-title" : undefined}>
       {heading && (
@@ -103,7 +108,7 @@ export function InstallationGallery({
         </div>
       )}
       <div className="installation-grid">
-        {visible.map((source, index) => (
+        {visible.map(({ source, index }) => (
           <figure className={"installation-item item-" + ((index % 5) + 1)} key={source}>
             <a href={source} target="_blank" rel="noreferrer" aria-label={"Open installation " + (index + 1) + " in a new tab"}>
               <img src={source} alt={"Evergreen H2O installation " + (index + 1)} loading={index < 4 ? "eager" : "lazy"} />
