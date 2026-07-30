@@ -53,14 +53,14 @@ export default function Home() {
         <InstallationGallery
           sources={[
             "/installations/1.jpg",
+            "/installations/13.png",
             "/installations/2.jpeg",
             "/installations/5.png",
+            "/installations/18.png",
             "/installations/6.png",
             "/installations/8.png",
-            "/installations/9.png",
-            "/installations/13.png",
-            "/installations/18.png",
             "/installations/23.png",
+            "/installations/9.png",
           ]}
         />
 
