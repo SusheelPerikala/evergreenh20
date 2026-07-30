@@ -79,7 +79,7 @@ export const products: Product[] = [
     benefits: ["Salt-free operation", "No brine tank", "Compact footprint", "Whole-home treatment"],
     availability: "Request a quote",
     availabilityTone: "quote",
-    image: "/products/whole-home-salt-free-conditioner.png",
+    image: "/products/whole-home-salt-free-conditioner-google-doc.png",
     imageAlt: "Single black whole-home salt-free conditioning tank",
   },
   {
@@ -152,7 +152,7 @@ export const products: Product[] = [
     benefits: ["Whole-home integration", "Stainless housing", "Serviceable lamp", "Professional installation"],
     availability: "Configured to order",
     availabilityTone: "quote",
-    image: "/products/whole-home-uv.png",
+    image: "/products/whole-home-uv-google-doc.png",
     imageAlt: "Stainless whole-home ultraviolet water treatment assembly",
   },
   {
