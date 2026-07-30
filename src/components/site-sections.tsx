@@ -87,10 +87,12 @@ export function InstallationGallery({
   excludeSources = [],
   limit,
   heading = true,
+  showViewAll = true,
 }: {
   excludeSources?: string[];
   limit?: number;
   heading?: boolean;
+  showViewAll?: boolean;
 }) {
   const available = installations
     .map((source, index) => ({ source, index }))
@@ -117,7 +119,7 @@ export function InstallationGallery({
           </figure>
         ))}
       </div>
-      {typeof limit === "number" && limit < installations.length && (
+      {showViewAll && typeof limit === "number" && limit < installations.length && (
         <div className="section-action"><Link className="text-link" href="/reviews#installations">View all installations <Icon name="arrow" /></Link></div>
       )}
     </section>

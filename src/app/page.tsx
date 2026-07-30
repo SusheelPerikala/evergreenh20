@@ -50,7 +50,7 @@ export default function Home() {
 
         <FAQSection />
 
-        <InstallationGallery excludeSources={["/installations/10.png"]} limit={10} />
+        <InstallationGallery excludeSources={["/installations/10.png"]} limit={9} />
 
         <section className="reviews-section" aria-labelledby="reviews-title">
           <div className="reviews-heading">
