@@ -30,7 +30,7 @@ export default function ReviewsPage() {
           </div>
           <ReviewGrid />
         </section>
-        <InstallationGallery />
+        <InstallationGallery limit={27} showViewAll={false} />
       </main>
       <Footer />
     </>

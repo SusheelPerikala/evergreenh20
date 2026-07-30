@@ -87,13 +87,18 @@ export function InstallationGallery({
   excludeSources = [],
   limit,
   heading = true,
+  showViewAll = true,
+  sources,
 }: {
   excludeSources?: string[];
   limit?: number;
   heading?: boolean;
+  showViewAll?: boolean;
+  sources?: string[];
 }) {
-  const available = installations
-    .map((source, index) => ({ source, index }))
+  const sourceList = sources ?? installations;
+  const available = sourceList
+    .map((source) => ({ source, index: installations.indexOf(source) }))
     .filter(({ source }) => !excludeSources.includes(source));
   const visible = typeof limit === "number" ? available.slice(0, limit) : available;
   return (
@@ -117,7 +122,10 @@ export function InstallationGallery({
           </figure>
         ))}
       </div>
-      {typeof limit === "number" && limit < installations.length && (
+      {showViewAll && (
+        (typeof limit === "number" && limit < installations.length)
+        || (sources && sources.length < installations.length)
+      ) && (
         <div className="section-action"><Link className="text-link" href="/reviews#installations">View all installations <Icon name="arrow" /></Link></div>
       )}
     </section>
