@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main id="main-content">
+      <main className="home-page" id="main-content">
         <section className="home-hero">
           <div className="hero-photo" />
           <div className="hero-gradient" />
