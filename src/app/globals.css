@@ -242,14 +242,10 @@ section[id], article[id] { scroll-margin-top: 7rem; }
 .installation-section { padding: var(--section) var(--gutter); background: var(--paper); }
 .installation-heading { display: grid; grid-template-columns: 2fr 1fr; align-items: end; max-width: 1500px; margin: 0 auto 4.5rem; }
 .installation-heading > p { max-width: 420px; margin: 0 0 .5rem auto; color: var(--moss); line-height: 1.5; }
-.installation-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-flow: dense; gap: 1rem; max-width: 1500px; margin: auto; }
-.installation-item { position: relative; grid-column: span 4; aspect-ratio: 1; margin: 0; overflow: hidden; border-radius: 18px; background: var(--mist); }
-.installation-item.item-1, .installation-item.item-5 { grid-column: span 8; aspect-ratio: 1.7; }
-.installation-item.item-3 { grid-column: span 5; aspect-ratio: 1.1; }
-.installation-item.item-4 { grid-column: span 7; aspect-ratio: 1.55; }
-.installation-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.installation-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; max-width: 1500px; margin: auto; }
+.installation-item { position: relative; aspect-ratio: 3 / 4; margin: 0; overflow: hidden; border-radius: 18px; background: var(--mist); }
+.installation-item img { width: 100%; height: 100%; object-fit: contain; object-position: center; transition: transform .6s var(--ease); }
 .installation-item > a { display: block; width: 100%; height: 100%; background: var(--white); }
-.installation-item > a img { object-fit: contain; }
 .installation-item:hover img { transform: scale(1.035); }
 .installation-item figcaption { position: absolute; right: .8rem; bottom: .8rem; left: .8rem; display: flex; align-items: center; justify-content: space-between; padding: .6rem .75rem; color: var(--white); border-radius: 10px; background: rgba(5,25,19,.74); backdrop-filter: blur(10px); }
 .installation-item figcaption span { font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
@@ -262,11 +258,10 @@ section[id], article[id] { scroll-margin-top: 7rem; }
 .reviews-heading h2 { margin: 0; }
 .reviews-heading .text-link { color: var(--white); border-color: rgba(255,255,255,.4); }
 .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 1500px; margin: auto; }
-.review-card { display: flex; flex-direction: column; min-height: 430px; padding: 1.4rem; color: var(--white); border: 1px solid rgba(255,255,255,.16); border-radius: 18px; background: rgba(255,255,255,.04); }
-.review-grid:not(.review-grid-compact) .review-card:first-child { grid-column: span 2; }
+.review-card { display: flex; flex-direction: column; min-height: 390px; padding: clamp(1.4rem, 2.5vw, 2rem); color: var(--white); border: 1px solid rgba(255,255,255,.16); border-radius: 18px; background: rgba(255,255,255,.04); }
 .review-top { display: flex; justify-content: space-between; color: var(--lime); font-size: .75rem; letter-spacing: .1em; }
 .review-top small { color: rgba(255,255,255,.4); }
-.review-card blockquote { margin: auto 0; font-family: SuisseWorks, Georgia, serif; font-size: clamp(1.65rem, 2.7vw, 3.1rem); line-height: 1.08; letter-spacing: -.03em; }
+.review-card blockquote { display: flex; flex: 1; align-items: center; margin: 2.25rem 0; font-family: SuisseWorks, Georgia, serif; font-size: clamp(1.55rem, 2.1vw, 2.35rem); line-height: 1.16; letter-spacing: -.025em; }
 .review-card footer { display: grid; gap: .3rem; padding-top: 1.2rem; border-top: 1px solid rgba(255,255,255,.14); }
 .review-card footer strong { font-family: SuisseMedium, Arial, sans-serif; font-size: .84rem; font-weight: 500; }
 .review-card footer span { color: rgba(255,255,255,.58); font-size: .76rem; }
@@ -388,7 +383,6 @@ section[id], article[id] { scroll-margin-top: 7rem; }
   .sticky-heading, .contact-copy { position: static; }
   .faq-section > * { max-width: none; }
   .review-grid { grid-template-columns: 1fr 1fr; }
-  .review-grid .review-card:last-child { grid-column: 1 / -1; }
   .category-gateway { grid-template-columns: 1fr; }
   .category-gateway a { min-height: 220px; }
   .story-split { grid-template-columns: 1fr; }
@@ -424,11 +418,9 @@ section[id], article[id] { scroll-margin-top: 7rem; }
   .faq-list summary > span { width: 30px; height: 30px; }
   .faq-list details > p { margin-left: 44px; }
   .installation-grid { grid-template-columns: 1fr 1fr; }
-  .installation-item, .installation-item.item-1, .installation-item.item-3, .installation-item.item-4, .installation-item.item-5 { grid-column: span 1; aspect-ratio: .85; }
-  .installation-item:first-child, .installation-item:nth-child(6n) { grid-column: 1 / -1; aspect-ratio: 1.3; }
+  .installation-item { aspect-ratio: 3 / 4; }
   .review-grid { grid-template-columns: 1fr; }
-  .review-grid:not(.review-grid-compact) .review-card:first-child, .review-grid .review-card:last-child { grid-column: auto; }
-  .review-card { min-height: 350px; }
+  .review-card { min-height: 340px; }
   .contact-section { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .interior-hero { min-height: 760px; padding-top: 9rem; }
@@ -453,7 +445,7 @@ section[id], article[id] { scroll-margin-top: 7rem; }
   .product-art { aspect-ratio: .94; }
   .product-copy ul { grid-template-columns: 1fr; }
   .installation-grid { grid-template-columns: 1fr; }
-  .installation-item, .installation-item.item-1, .installation-item.item-3, .installation-item.item-4, .installation-item.item-5, .installation-item:first-child, .installation-item:nth-child(6n) { grid-column: auto; aspect-ratio: 1; }
+  .installation-item { aspect-ratio: 3 / 4; }
 }
 
 @media (prefers-reduced-motion: reduce) {

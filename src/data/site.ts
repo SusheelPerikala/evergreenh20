@@ -219,19 +219,19 @@ export const reviews = [
   {
     quote: "The difference was immediate. The water feels better, the glassware is clearer, and the installation looks incredibly clean.",
     name: "Verified homeowner",
-    location: "North Texas",
+    location: "Upstate New York",
     product: "Complete Home System",
   },
   {
     quote: "They explained every component without pressure. We understood the system, the maintenance, and exactly why it fit our home.",
     name: "Whole-home customer",
-    location: "Dallas-Fort Worth",
+    location: "New York City",
     product: "Softener + Carbon",
   },
   {
     quote: "Strong pressure, excellent-tasting water, and a team that treated the mechanical room like it was their own home.",
     name: "Installation customer",
-    location: "Texas",
+    location: "New York",
     product: "Whole Home + RO",
   },
 ];
