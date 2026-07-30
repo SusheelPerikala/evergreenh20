@@ -192,6 +192,8 @@ section[id], article[id] { scroll-margin-top: 7rem; }
 .stock-pill i { width: 7px; height: 7px; border-radius: 50%; background: #70a542; }
 .stock-pill.limited i { background: #d28a37; }
 .stock-pill.quote i { background: #8b9691; }
+.product-image { position: relative; z-index: 2; width: 84%; height: 84%; object-fit: contain; filter: drop-shadow(0 22px 22px rgba(10,34,27,.16)); transition: transform .45s var(--ease); }
+.product-art:hover .product-image { transform: translateY(-6px) scale(1.015); }
 .product-visual { position: relative; z-index: 2; width: 78%; height: 72%; transition: transform .45s var(--ease); }
 .product-art:hover .product-visual { transform: translateY(-6px) rotate(-.5deg); }
 .visual-floor { position: absolute; right: 9%; bottom: 5%; left: 9%; height: 13px; border-radius: 50%; background: rgba(10,34,27,.13); filter: blur(8px); }

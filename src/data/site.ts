@@ -7,7 +7,8 @@ export type Product = {
   benefits: string[];
   availability: string;
   availabilityTone: "available" | "limited" | "quote";
-  visual: "complete" | "softener" | "ro" | "prefilter";
+  image: string;
+  imageAlt: string;
   featured?: boolean;
 };
 
@@ -27,7 +28,8 @@ export const products: Product[] = [
     benefits: ["Ceramic disc valve", "Jacobi coconut shell carbon", "ResinTech CG10 resin", "1 1/4-inch distributor tube"],
     availability: "In stock - quote today",
     availabilityTone: "available",
-    visual: "complete",
+    image: "/products/complete-home-system.png",
+    imageAlt: "Evergreen H2O complete whole-home dual-tank water treatment system",
     featured: true,
   },
   {
@@ -39,7 +41,8 @@ export const products: Product[] = [
     benefits: ["High-flow valve platform", "Programmable regeneration", "USA-built assembly", "NSF-certified components"],
     availability: "In stock",
     availabilityTone: "available",
-    visual: "softener",
+    image: "/products/water-softener-chlorine-filtration.png",
+    imageAlt: "Water softener with chlorine filtration tank and brine cabinet",
     featured: true,
   },
   {
@@ -51,7 +54,8 @@ export const products: Product[] = [
     benefits: ["100 GPD capacity", "Tankless footprint", "Multi-stage filtration", "Installation available"],
     availability: "Limited stock",
     availabilityTone: "limited",
-    visual: "ro",
+    image: "/products/hw800-alkapro.png",
+    imageAlt: "HW800 AlkaPro tankless reverse-osmosis system with drinking-water faucet",
     featured: true,
   },
   {
@@ -63,7 +67,8 @@ export const products: Product[] = [
     benefits: ["Protects downstream media", "Serviceable housing", "Supports steady flow", "Visible filter chamber"],
     availability: "Configured to order",
     availabilityTone: "quote",
-    visual: "prefilter",
+    image: "/products/pre-sediment-filter.png",
+    imageAlt: "Blue whole-home pre-sediment filter housings",
   },
 ];
 
