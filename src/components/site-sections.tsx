@@ -2,45 +2,6 @@ import Link from "next/link";
 import { Icon } from "./icon";
 import { faqs, installations, products, reviews, type Product } from "@/data/site";
 
-export function ProductVisual({ type }: { type: Product["visual"] }) {
-  return (
-    <div className={("product-visual product-visual-" + type)} aria-hidden="true">
-      <span className="visual-floor" />
-      {type === "complete" && (
-        <>
-          <span className="visual-tank visual-tank-main"><i /></span>
-          <span className="visual-tank visual-tank-side"><i /></span>
-          <span className="visual-pipe" />
-          <span className="visual-controller">FLOW<br /><b>1.25</b></span>
-        </>
-      )}
-      {type === "softener" && (
-        <>
-          <span className="visual-tank visual-tank-solo"><i /></span>
-          <span className="visual-brine"><i /></span>
-          <span className="visual-pipe visual-pipe-soft" />
-        </>
-      )}
-      {type === "ro" && (
-        <>
-          <span className="visual-ro-box"><b>H2O</b></span>
-          <span className="visual-ro-filter one" />
-          <span className="visual-ro-filter two" />
-          <span className="visual-ro-filter three" />
-          <span className="visual-faucet" />
-        </>
-      )}
-      {type === "prefilter" && (
-        <>
-          <span className="visual-prefilter"><i /><b /></span>
-          <span className="visual-pipe visual-pipe-pre" />
-          <span className="visual-gauge" />
-        </>
-      )}
-    </div>
-  );
-}
-
 export function ProductGrid({
   featuredOnly = false,
   category,
@@ -62,7 +23,7 @@ export function ProductGrid({
         <article className="product-card" id={product.id} key={product.id}>
           <div className="product-art">
             <span className="product-index">0{index + 1}</span>
-            <ProductVisual type={product.visual} />
+            <img className="product-image" src={product.image} alt={product.imageAlt} />
             {showAvailability && (
               <span className={("stock-pill " + product.availabilityTone)}>
                 <i /> {product.availability}
