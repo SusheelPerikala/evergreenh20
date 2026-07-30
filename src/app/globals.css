@@ -166,6 +166,33 @@ section[id], article[id] { scroll-margin-top: 7rem; }
 }
 .section-heading > p { max-width: 410px; margin: 1.6rem 0 0; color: var(--moss); line-height: 1.5; }
 
+.home-page .superiority-section > .section-heading,
+.home-page .products-heading,
+.home-page .installation-heading,
+.home-page .reviews-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  text-align: center;
+}
+.home-page .superiority-section > .section-heading h2,
+.home-page .products-heading h2,
+.home-page .installation-heading h2,
+.home-page .reviews-heading h2 { margin-top: 1.4rem; }
+.home-page .superiority-section > .section-heading p,
+.home-page .products-heading > div:last-child,
+.home-page .installation-heading > p { max-width: 600px; margin: 1.6rem auto 0; text-align: center; }
+.home-page .products-heading > div:first-child,
+.home-page .products-heading > div:last-child { display: flex; flex-direction: column; align-items: center; }
+.home-page .products-heading .text-link,
+.home-page .reviews-heading .text-link { margin-top: 1.8rem; }
+.home-page .faq-section .section-heading,
+.home-page .contact-copy { text-align: center; }
+.home-page .faq-section .section-heading > p,
+.home-page .contact-copy > p { margin-right: auto; margin-left: auto; }
+.home-page .contact-points { margin-right: auto; margin-left: auto; text-align: left; }
+
 .superiority-section { padding: var(--section) var(--gutter); background: var(--white); }
 .superiority-section > .section-heading { display: grid; grid-template-columns: 1fr 2fr 1fr; align-items: end; max-width: 1500px; margin: 0 auto 5rem; }
 .superiority-section > .section-heading .eyebrow { align-self: start; }

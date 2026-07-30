@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Icon } from "./icon";
-import { faqs, installations, products, reviews, type Product } from "@/data/site";
+import { completeHomePackage, faqs, installations, products, reviews, type Product } from "@/data/site";
 
 export function ProductGrid({
   featuredOnly = false,
@@ -11,7 +11,8 @@ export function ProductGrid({
   category?: Product["categorySlug"];
   showAvailability?: boolean;
 }) {
-  const visible = products.filter((product) => {
+  const availableProducts = featuredOnly ? [completeHomePackage, ...products] : products;
+  const visible = availableProducts.filter((product) => {
     if (featuredOnly && !product.featured) return false;
     if (category && product.categorySlug !== category) return false;
     return true;

@@ -12,6 +12,20 @@ export type Product = {
   featured?: boolean;
 };
 
+export const completeHomePackage: Product = {
+  id: "complete-home",
+  category: "Whole home systems",
+  categorySlug: "whole-home",
+  name: "Complete Home System Package",
+  description: "A coordinated softening and carbon filtration package built to improve water throughout the home.",
+  benefits: ["Ceramic disc valve", "Jacobi coconut shell carbon", "ResinTech CG10 resin", "1 1/4-inch distributor tube"],
+  availability: "In stock - quote today",
+  availabilityTone: "available",
+  image: "/products/city-water-dual-tank.png",
+  imageAlt: "Complete whole-home water treatment package with dual tanks and brine cabinet",
+  featured: true,
+};
+
 export const navigation = [
   { label: "Products", href: "/products" },
   { label: "Reviews", href: "/reviews" },
