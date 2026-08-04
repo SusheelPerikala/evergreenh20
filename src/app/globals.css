@@ -403,11 +403,13 @@ section.catalog-section { padding: var(--section) var(--gutter); scroll-margin-t
 .footer-socials a { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; }
 .footer-socials svg { width: 21px; height: 21px; fill: currentColor; stroke: currentColor; stroke-width: 1.7; }
 .footer-socials a:hover { color: #071913; border-color: var(--lime); background: var(--lime); }
-.footer-company { grid-column: 1 / -1; display: grid; grid-template-columns: .65fr .8fr 1.1fr 2fr; gap: 1rem 2rem; align-items: start; margin-top: 5rem; padding-top: 1.5rem; color: rgba(255,255,255,.7); border-top: 1px solid rgba(255,255,255,.13); font-size: .83rem; font-style: normal; line-height: 1.5; }
-.footer-company strong { color: rgba(255,255,255,.48); font-family: SuisseMedium, Arial, sans-serif; font-size: .68rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
-.footer-company a { color: rgba(255,255,255,.78); }
+.footer-company { grid-column: 1 / -1; display: grid; grid-template-columns: 1.05fr .7fr 1.15fr 1.6fr; gap: 1.5rem 3rem; align-items: start; margin-top: 5rem; padding: 2rem 0; color: rgba(255,255,255,.7); border-top: 1px solid rgba(255,255,255,.13); border-bottom: 1px solid rgba(255,255,255,.13); font-style: normal; }
+.footer-company-heading strong, .footer-company-item small { display: block; color: rgba(255,255,255,.48); font-family: SuisseMedium, Arial, sans-serif; font-size: .68rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
+.footer-company-heading p { margin: .8rem 0 0; color: rgba(255,255,255,.8); font-family: SuisseWorks, Georgia, serif; font-size: 1.25rem; line-height: 1.15; }
+.footer-company-item { display: grid; gap: .75rem; padding-left: 1.25rem; border-left: 1px solid rgba(255,255,255,.13); }
+.footer-company-item a, .footer-company-item span { color: rgba(255,255,255,.82); font-size: .9rem; line-height: 1.5; }
 .footer-company a:hover { color: var(--lime); }
-.footer-bottom { grid-column: 1 / -1; display: flex; justify-content: space-between; margin-top: 2.5rem; padding-top: 1.5rem; color: rgba(255,255,255,.48); border-top: 1px solid rgba(255,255,255,.13); font-size: .72rem; }
+.footer-bottom { grid-column: 1 / -1; display: flex; justify-content: space-between; margin-top: 1.5rem; color: rgba(255,255,255,.48); font-size: .72rem; }
 
 @keyframes riseIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
 @keyframes heroSettle { from { opacity: .65; transform: scale(1.08); } to { opacity: 1; transform: scale(1.015); } }
@@ -434,6 +436,7 @@ section.catalog-section { padding: var(--section) var(--gutter); scroll-margin-t
   .site-footer { grid-template-columns: 1fr; }
   .footer-links { margin-top: 4rem; }
   .footer-company { grid-template-columns: 1fr 1fr; }
+  .footer-company-item:nth-child(3) { border-left: 0; }
 }
 
 @media (max-width: 760px) {
@@ -481,6 +484,8 @@ section.catalog-section { padding: var(--section) var(--gutter); scroll-margin-t
   .footer-cta { gap: 3rem; }
   .footer-links { grid-template-columns: 1fr 1fr; gap: 3rem 1.5rem; }
   .footer-company { grid-template-columns: 1fr; gap: .7rem; }
+  .footer-company-heading { margin-bottom: .6rem; }
+  .footer-company-item { gap: .35rem; padding: .9rem 0 0; border-top: 1px solid rgba(255,255,255,.1); border-left: 0; }
   .footer-bottom { flex-direction: column; gap: .7rem; }
 }
 

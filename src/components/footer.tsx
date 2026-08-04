@@ -67,10 +67,22 @@ export function Footer() {
           </div>
         </div>
         <address className="footer-company">
-          <strong>Company info</strong>
-          <a href="tel:+19047184073">904-718-4073</a>
-          <a href="mailto:info@evergreenh20.com">info@evergreenh20.com</a>
-          <span>500 8th Avenue FRNT 3, New York, NY, United States, New York</span>
+          <div className="footer-company-heading">
+            <strong>Company info</strong>
+            <p>Connect with our New York team.</p>
+          </div>
+          <div className="footer-company-item">
+            <small>Call</small>
+            <a href="tel:+19047184073">904-718-4073</a>
+          </div>
+          <div className="footer-company-item">
+            <small>Email</small>
+            <a href="mailto:info@evergreenh20.com">info@evergreenh20.com</a>
+          </div>
+          <div className="footer-company-item footer-company-address">
+            <small>Visit</small>
+            <span>500 8th Avenue FRNT 3<br />New York, NY, United States, New York</span>
+          </div>
         </address>
         <div className="footer-bottom">
           <span>Copyright 2026 Evergreen H2O.</span>
