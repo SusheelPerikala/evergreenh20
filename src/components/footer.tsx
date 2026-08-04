@@ -1,21 +1,22 @@
 import Link from "next/link";
-import { BrandLogo } from "./brand-logo";
 
 const groups = [
   {
-    title: "Products",
+    title: "Helpful Links",
     links: [
-      ["Whole Home", "/products#whole-home"],
-      ["Drinking Water", "/products#drinking-water"],
-      ["Add Ons", "/products#add-ons"],
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
+      ["Home", "/"],
       ["Reviews", "/reviews"],
       ["Installations", "/reviews#installations"],
       ["Our Story", "/our-story"],
+      ["Contact", "/contact"],
+    ],
+  },
+  {
+    title: "Our Products",
+    links: [
+      ["Whole Home Systems", "/products#whole-home"],
+      ["Drinking Water Systems", "/products#drinking-water"],
+      ["Add Ons", "/products#add-ons"],
     ],
   },
 ];
@@ -51,10 +52,6 @@ function ContactIcon({ name }: { name: "phone" | "email" | "location" }) {
 export function Footer() {
   return (
     <footer className="site-footer">
-        <div className="footer-brand">
-          <Link href="/" aria-label="Evergreen H2O home"><BrandLogo /></Link>
-          <h3>Your whole-home water team,<br />backed by better components.</h3>
-        </div>
         <div className="footer-links">
           {groups.map((group) => (
             <div key={group.title}>
@@ -64,9 +61,8 @@ export function Footer() {
               ))}
             </div>
           ))}
-        </div>
-        <address className="footer-company">
-          <div className="footer-contact-details">
+          <address className="footer-company">
+            <strong>Company info.</strong>
             <a href="tel:+19047184073">
               <ContactIcon name="phone" />
               <span>904-718-4073</span>
@@ -77,18 +73,21 @@ export function Footer() {
             </a>
             <div>
               <ContactIcon name="location" />
-              <span>500 8th Avenue FRNT 3, New York, NY,<br />United States, New York</span>
+              <span>500 8th Avenue FRNT 3,<br />New York, NY, United States, New York</span>
+            </div>
+          </address>
+          <div className="footer-follow">
+            <strong>Follow Us.</strong>
+            <div className="footer-socials">
+              <a href="https://www.facebook.com/profile.php?id=61591314113049" target="_blank" rel="noreferrer" aria-label="Evergreen H2O on Facebook">
+                <SocialIcon name="facebook" />
+              </a>
+              <a href="https://www.instagram.com/evergreen_h20/" target="_blank" rel="noreferrer" aria-label="Evergreen H2O on Instagram">
+                <SocialIcon name="instagram" />
+              </a>
             </div>
           </div>
-          <div className="footer-socials">
-            <a href="https://www.facebook.com/profile.php?id=61591314113049" target="_blank" rel="noreferrer" aria-label="Evergreen H2O on Facebook">
-              <SocialIcon name="facebook" />
-            </a>
-            <a href="https://www.instagram.com/evergreen_h20/" target="_blank" rel="noreferrer" aria-label="Evergreen H2O on Instagram">
-              <SocialIcon name="instagram" />
-            </a>
-          </div>
-        </address>
+        </div>
         <div className="footer-bottom">
           <span>Copyright 2026 Evergreen H2O.</span>
           <span>Systems built with care in the USA.</span>
