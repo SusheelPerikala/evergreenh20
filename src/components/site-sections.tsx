@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Icon } from "./icon";
+import { QuoteForm } from "./quote-form";
 import { completeHomePackage, faqs, installations, products, reviews, type Product } from "@/data/site";
 
 export function ProductGrid({
@@ -145,29 +146,7 @@ export function ContactSection({ compact = false }: { compact?: boolean }) {
           <span><b>03</b>Service-focused support after installation</span>
         </div>
       </div>
-      <form className="contact-form" action="mailto:hello@evergreenh20.com" method="post" encType="text/plain">
-        <div className="form-row">
-          <label>First name<input name="first-name" autoComplete="given-name" required /></label>
-          <label>Last name<input name="last-name" autoComplete="family-name" required /></label>
-        </div>
-        <div className="form-row">
-          <label>Email<input type="email" name="email" autoComplete="email" required /></label>
-          <label>Phone<input type="tel" name="phone" autoComplete="tel" /></label>
-        </div>
-        <label>What are you noticing?
-          <select name="water-concern" defaultValue="">
-            <option value="" disabled>Select a water concern</option>
-            <option>Hard water or scale</option>
-            <option>Chlorine taste or odor</option>
-            <option>Sediment</option>
-            <option>Drinking water quality</option>
-            <option>Not sure yet</option>
-          </select>
-        </label>
-        <label>Tell us about your home<textarea name="message" rows={5} placeholder="Household size, location, current equipment, or anything else useful." /></label>
-        <button className="button form-submit" type="submit">Request my quote <Icon name="arrow" /></button>
-        <small>Submitting opens your email application so you can review the message before sending.</small>
-      </form>
+      <QuoteForm />
     </section>
   );
 }
