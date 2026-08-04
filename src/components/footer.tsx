@@ -38,6 +38,16 @@ function SocialIcon({ name }: { name: "facebook" | "instagram" }) {
   );
 }
 
+function ContactIcon({ name }: { name: "phone" | "email" | "location" }) {
+  const paths = {
+    phone: <path d="M7.1 3.5 10 8.3l-2.1 2.1a16.5 16.5 0 0 0 5.7 5.7l2.1-2.1 4.8 2.9-1.4 3.4c-.3.8-1.2 1.3-2.1 1.2C9.5 20.5 3.5 14.5 2.5 7c-.1-.9.4-1.8 1.2-2.1l3.4-1.4Z" />,
+    email: <><rect x="2.5" y="4.5" width="19" height="15" rx="1.8" /><path d="m3.5 6 8.5 7 8.5-7" /></>,
+    location: <><path d="M20 10c0 5.7-8 12-8 12S4 15.7 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></>,
+  };
+
+  return <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">{paths[name]}</svg>;
+}
+
 export function Footer() {
   return (
     <footer className="site-footer">
@@ -54,34 +64,29 @@ export function Footer() {
               ))}
             </div>
           ))}
-          <div>
-            <strong>Socials</strong>
-            <div className="footer-socials">
-              <a href="https://www.facebook.com/profile.php?id=61591314113049" target="_blank" rel="noreferrer" aria-label="Evergreen H2O on Facebook">
-                <SocialIcon name="facebook" />
-              </a>
-              <a href="https://www.instagram.com/evergreen_h20/" target="_blank" rel="noreferrer" aria-label="Evergreen H2O on Instagram">
-                <SocialIcon name="instagram" />
-              </a>
-            </div>
-          </div>
         </div>
         <address className="footer-company">
-          <div className="footer-company-heading">
-            <strong>Company info</strong>
-            <p>Connect with our New York team.</p>
+          <div className="footer-contact-details">
+            <a href="tel:+19047184073">
+              <ContactIcon name="phone" />
+              <span>904-718-4073</span>
+            </a>
+            <a href="mailto:info@evergreenh20.com">
+              <ContactIcon name="email" />
+              <span>info@evergreenh20.com</span>
+            </a>
+            <div>
+              <ContactIcon name="location" />
+              <span>500 8th Avenue FRNT 3, New York, NY,<br />United States, New York</span>
+            </div>
           </div>
-          <div className="footer-company-item">
-            <small>Call</small>
-            <a href="tel:+19047184073">904-718-4073</a>
-          </div>
-          <div className="footer-company-item">
-            <small>Email</small>
-            <a href="mailto:info@evergreenh20.com">info@evergreenh20.com</a>
-          </div>
-          <div className="footer-company-item footer-company-address">
-            <small>Visit</small>
-            <span>500 8th Avenue FRNT 3<br />New York, NY, United States, New York</span>
+          <div className="footer-socials">
+            <a href="https://www.facebook.com/profile.php?id=61591314113049" target="_blank" rel="noreferrer" aria-label="Evergreen H2O on Facebook">
+              <SocialIcon name="facebook" />
+            </a>
+            <a href="https://www.instagram.com/evergreen_h20/" target="_blank" rel="noreferrer" aria-label="Evergreen H2O on Instagram">
+              <SocialIcon name="instagram" />
+            </a>
           </div>
         </address>
         <div className="footer-bottom">
